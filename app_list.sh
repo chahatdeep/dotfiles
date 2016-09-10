@@ -4,17 +4,17 @@
 ## Note: Comments begin with a # (inline comments are allowed)
 
 #3D CAD
-blender
+#blender
 
 #Development
 git
 python
 
 #Arduino
-avr-gcc
-avr-binutils
-avr-libc
-avrdude
+#avr-gcc
+#avr-binutils
+#avr-libc
+#avrdude
 #arduino-sdk #from official arduino website or AUR repo
 
 
@@ -23,10 +23,12 @@ lynx #Command line browser
 firefox 
 flash-player #for firefox
 chrome  #Add the adblock (not plus version) with the manual filters from gmail
+opera
 
 #Utilities
 launchy #Application launcher (Alt-Space Shortcut key)
-evince #Pdf reader
+zathura #God-like PDF Reader
+#evince #Pdf reader
 rxvt-unicode
 libreoffice
 gvim    # Graphical VIM
