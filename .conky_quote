@@ -1,0 +1,53 @@
+#!/usr/bin/conky -d -c
+background yes
+alignment top_right
+#border_width 5
+color0 555555                   #
+color1 FCAF3E                   # zolty
+color2 64574e                   # braz
+color3 a82553                   # rozowy f71f84
+color4 5e1014                   # bordowy
+color5 64574e                   # braz
+color6 a7a7a7                   # szary
+color7 8888CC                   #  (COOL)
+color8 9d9c61                   # zolto-szary
+color9 525276                   # niebiesko-szary
+cpu_avg_samples 2
+default_color CCCCCC            # szary a7a7a7
+default_outline_color 000000    # Black
+default_shade_color 000000      # Black
+double_buffer yes
+draw_borders no
+draw_graph_borders no
+draw_outline no
+draw_shades no
+gap_x 650
+gap_y 550
+max_user_text 10000
+#maximum_width 180
+minimum_size 350
+net_avg_samples 2
+no_buffers yes
+override_utf8_locale no
+own_window yes
+own_window_type desktop
+own_window_class Conky
+own_window_colour 000000        # Black
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type override        ## normal
+pad_percents 2                  # to co nizej, miejsc po przecinku
+short_units yes                 # krotka wersja podawania wielkosci dyskow np. 612.21M/3.80G
+stippled_borders 3
+text_buffer_size 8000
+total_run_times 0
+update_interval 5
+uppercase no
+use_spacer center
+use_xft yes
+xftalpha 0.75
+xftfont MrsEavesSmartLig:bold:size=15
+
+TEXT
+#"To make your life beautiful and easy, make it tough!"
+"${font Julius:bold:size=14}There is an another way of thinking! Always!${font}"
