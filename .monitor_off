@@ -1,0 +1,2 @@
+sleep 1
+exec 'xset dpms force standby'
