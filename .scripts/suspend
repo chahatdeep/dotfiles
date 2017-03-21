@@ -1,0 +1,4 @@
+#echo Enter the password to send your Arch to sleep
+#sudo i3lock -ti ~/Pictures/stupid.png && sudo pm-suspend-hybrid && exit
+i3lock -u -c 000000 && sleep infinity && exit
+

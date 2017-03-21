@@ -1,0 +1,7 @@
+
+# Read the keyboard value:
+
+I=$(cat /sys/class/leds/asus\:\:kbd_backlight/brightness);
+I=$(($I-1));
+echo $I | tee /sys/class/leds/asus\:\:kbd_backlight/brightness 
+
