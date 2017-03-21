@@ -1,0 +1,114 @@
+#CONKY CONFIG FILE [Desktop / Layer]
+ 
+#Better used with GNU/Linux CrunchBang <3 #! http://crunchbang.org/donate
+
+background yes
+use_xft yes
+xftfont MrsEavesSmartLig:size=14
+xftalpha 0.8
+update_interval 1
+total_run_times 0
+own_window no
+own_window_type panel
+
+own_window_colour 000000
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager 
+own_window_transparent no	
+own_window_type normal
+double_buffer yes
+minimum_size 245
+maximum_width 225
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_shade_color black
+default_outline_color #AAAAAA
+default_bar_size 40 3
+default_gauge_size 20 20
+imlib_cache_size 0
+draw_shades yes
+alignment top_right
+gap_x 1690
+gap_y 30
+double_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+default_color CCCCCC
+#
+TEXT
+#
+# DEADBEEF MUSIC PLAYER ----------------------------------------------
+#
+#${color 20B0FF}${voffset 7}${goto 10}${font Droid Sans:size=12:bold}${execi 2 deadbeef --nowplaying "%t"}$font 
+#${goto 10}${execi 2 deadbeef --nowplaying "%a"}${goto 170}${font Droid Sans:bold:size=10}${execi 1 deadbeef --nowplaying "%e"}${offset 2}/${offset 2}${execi 1 deadbeef --nowplaying "%l"}$font 
+##${goto 10}${execi 2 deadbeef --nowplaying "%b"} 
+#${goto 10}${font Droid Sans:size=8:bold}${execi 2 deadbeef --nowplaying "%y"}$font 
+#${texeci 20 ~/.config/conky/db-cover.sh}${image ~/.config/conky/conkyCover.png} ${color}
+#
+#
+#
+# GMAIL UPDATES -----------------------------------------------------------
+#aa
+${font Julius:bold:size=12}${color Yellow}${execpi 300 python3 ~/.scripts/gmail.py} ${color} ${font}
+#
+# RAM AND CPU ------------------------------------------------------
+#
+#
+${font Julius:bold:size=14}${color White}Archahat${color slate grey}${hr 2}${font}${color}
+# 
+RAM ${memmax} ${alignr}[${mem}] ${memperc}%
+${membar 5,200}
+#SWAP ${swapmax} ${alignr}[${swap}] ${swapperc}%
+#${swapbar 5,200}
+# 
+CPU ${freq_g cpu0} GHz ${alignc}${cpugraph cpu0 11,102}
+CPU Core 1  ${alignc}${cpubar cpu1 3,85}${alignr} ${cpu cpu1}%
+CPU Core 2 ${alignc}${cpubar cpu2 3,85}${alignr} ${cpu cpu2}%
+CPU Core 3 ${alignc}${cpubar cpu3 3,85}${alignr} ${cpu cpu3}%
+CPU Core 4 ${alignc}${cpubar cpu4 3,85}${alignr} ${cpu cpu4}%
+#
+# NETWORK -----------------------------------------------------
+#
+${font Julius:bold:size=12}${color White}Networks ${color slate grey}${hr 2}${font}${color}
+${if_existing /proc/net/route enp3s0}Uploads ${alignc}${upspeedf enp3s0}k/s ${alignr}${totalup enp3s0}
+${upspeedgraph eth0 15,200}
+$Downloads ${alignc}${downspeedf enp3s0}k/s ${alignr} ${totaldown enp3s0}
+${downspeedgraph enp3s0 15,200} ${endif}${if_existing /proc/net/route wlp2s0}
+Uploads ${alignc}${upspeedf wlp2s0}k/s ${alignr}${totalup wlp2s0}
+${upspeedgraph wlp2s0 15,200}
+
+Downloads ${alignc}${downspeedf wlp2s0}k/s ${alignr}${totaldown wlp2s0}
+${downspeedgraph wlp2s0 15,200}${endif}
+
+${if_existing /proc/net/route wlp2s0}WiFi Signal ${wireless_link_qual_perc wlp2s0}% ${alignr}${wireless_bitrate wlp2s0}${else}${alignr}No Connection${endif}
+${alignr}${uptime}
+#
+# DISKS-------------------------------------------------------------
+#
+${font Julius:bold:size=12}${color White}Disks ${color slate grey}${hr 2}${font}${color}
+LinuX ${fs_size /} ${alignr}[${fs_free /}] ${fs_free_perc /}%
+${fs_bar 2,200 /media}
+Work ${fs_size /media/Work} ${alignr}[${fs_free /media/Work}] ${fs_free_perc /media/Work}%
+${fs_bar 2,200 /media/Work}
+Everything ${fs_size /media/Everything} ${alignr}[${fs_free /media/Everything}] ${fs_free_perc /media/Everything}%
+${fs_bar 2,200 /media/Everything}
+${if_mounted /media/Win7/Windows}Win7 ${fs_size /media/Win7} ${alignr}[${fs_free /media/Win7}] ${fs_free_perc /media/Win7}%
+${fs_bar 2,200 /media/Win7}
+#${if_mounted /media/XXXXX/XXXXX} External ${fs_size /media/XXXXX/XXXXX} ${alignr}[${fs_free /media/XXXXX/XXXXX}] ${fs_free_perc /media/XXXXX/XXXXX}%
+#${fs_bar 2,200 /media/XXXXX/XXXXX}${endif}
+#${if_mounted /media/XXXXX/XXXXX}Pen ${fs_size /media/XXXXX/XXXXX} ${alignr}[${fs_free /media/XXXXX/XXXXX}] ${fs_free_perc /media/XXXXX/XXXXX}%
+#${fs_bar 2,200 /media/XXXXX/XXXXX}${endif}
+#${if_mounted /media/XXXXX/XXXXX}Camera ${fs_size /media/XXXXX/XXXXX} ${alignr}[${fs_free /media/XXXXX/XXXXX}] ${fs_free_perc /media/XXXXX/XXXXX}%
+#${fs_bar 2,200 /media/XXXXX/XXXXX}${endif}
+#
+
+${color White}${font MrsEavesSmartLig:bold:size=12}Battery ${alignr}${Battery_percent BAT0}% / ${acpitemp}C${color}
+#Top 3 Running Tasks
+
+${voffset -7}${font Julius:bold:size=8}NAME ${goto 90}PID${goto 120} CPU% ${alignr}MEM%${font}
+${font MrsEavesSmartLig:bold:size=10}${goto 9}${top name 1}${goto 85}${top pid 1}${goto 120}${top cpu 1}${goto 185}${top mem 1}${font}
+${font MrsEavesSmartLig:bold:size=10}${goto 9}${top name 2}${goto 85}${top pid 2}${goto 120}${top cpu 2}${goto 185}${top mem 2}${font}
+${font MrsEavesSmartLig:bold:size=10}${goto 9}${top name 3}${goto 85}${top pid 3}${goto 120}${top cpu 3}${goto 185}${top mem 3}${font}
+
