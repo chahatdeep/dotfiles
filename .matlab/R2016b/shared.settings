@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings name="shared" xmlns="urn:mathworks.matlab.settings" xsi:schemaLocation="urn:mathworks.matlab.settings settings.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <settings name="matlab">
+        <settings name="desktop">
+            <settings name="currentfolder">
+                <settings name="sourcecontrol" visible="true">
+                    <key name="Enabled" visible="true">
+                        <bool>
+                            <value>1</value>
+                        </bool>
+                    </key>
+                </settings>
+            </settings>
+        </settings>
+    </settings>
+</settings>

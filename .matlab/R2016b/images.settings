@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings name="images" xmlns="urn:mathworks.matlab.settings" xsi:schemaLocation="urn:mathworks.matlab.settings settings.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <key name="UseIPPL">
+        <bool>
+            <value>1</value>
+        </bool>
+    </key>
+    <settings name="imagebatchprocessingtool">
+        <key name="BatchFunctions">
+            <string minArraySize="0" maxArraySize="5">
+            </string>
+        </key>
+        <key name="BatchLocations">
+            <string minArraySize="0" maxArraySize="5">
+            </string>
+        </key>
+    </settings>
+    <settings name="imtool">
+        <key name="InitialMagnification">
+            <double>
+            </double>
+        </key>
+        <key name="InitialMagnificationStyle">
+            <string>
+                <value><![CDATA[adaptive]]></value>
+            </string>
+        </key>
+        <key name="OpenOverview">
+            <bool>
+                <value>0</value>
+            </bool>
+        </key>
+    </settings>
+</settings>

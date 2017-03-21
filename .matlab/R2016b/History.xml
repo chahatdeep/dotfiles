@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<history>
+<session>
+<command time_stamp="159ae803157">%-- 01/17/17 10:15:54 PM --%</command>
+<command execution_time="92">ls</command>
+<command execution_time="12">cd ~</command>
+<command execution_time="14">ls</command>
+<command execution_time="97">cd HW0/</command>
+<command execution_time="15">ls</command>
+<command execution_time="137">cd Part1/</command>
+<command execution_time="15">ls</command>
+<command execution_time="132">I = imread('TestImgResized.jpg');</command>
+<command error="true" execution_time="407">med = medfilt2(I);</command>
+<command execution_time="16">ls</command>
+<command execution_time="16">I = imread('TestImgResized.jpg');</command>
+<command execution_time="1538">G = imgaussfilt(I)</command>
+<command execution_time="16">G = imgaussfilt(I);</command>
+<command execution_time="5283">imshow(G);</command>
+<command execution_time="676">imshow(I);</command>
+<command error="true" execution_time="152">imshowpair(I,J);</command>
+<command execution_time="1352">imshowpair(I,G);</command>
+<command execution_time="115">imshow(I);</command>
+<command execution_time="265">subplot(1,2,1)</command>
+<command batch="1">subplot(1,2,1), imshow(I);</command>
+<command batch="1" execution_time="154">subplot(1,2,2), imshow(G);</command>
+<command batch="2" error="true">subplot(1,2,1), imshow(I);</command>
+<command batch="2" error="true" execution_time="89">subplot(1,2,2), imshow(medfilt2(I));</command>
+<command error="true" execution_time="21">medfilt2(I)</command>
+<command error="true" execution_time="69">M = medfilt1(I)</command>
+<command error="true" execution_time="19">M = medfilt2(I)</command>
+<command error="true" execution_time="20">M = medfilt2(I, [3 3])</command>
+<command execution_time="132">A = imnoise(I, 'salt &amp; pepper', 0.02);</command>
+<command execution_time="54">figure</command>
+<command error="true" execution_time="52">imshow(J)</command>
+<command execution_time="116" repeat="2">imshow(A)</command>
+<command error="true" execution_time="17">M = medfilt2(A);</command>
+<command execution_time="2310">M = medfilt3(A);</command>
+<command execution_time="100">imshow(M)</command>
+<command error="true" execution_time="270">avg = filter2(fspecial('average',3),I)/255;</command>
+<command error="true" execution_time="183">avg = filter3(fspecial('average',3),I)/255;</command>
+<command error="true" execution_time="180">avg = filter(fspecial('average',3),I)/255;</command>
+</session>
+</history>
