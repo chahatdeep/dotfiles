@@ -7,7 +7,20 @@
 #========================================================================
 #### >> Chahat Deep Singh i3 Config {chahatdeepsingh@gmail.com} << #####
 #========================================================================
+#
+# ---<<<IF YOU GET ERROR>>>---:
+#
+# in 'i3bar', make sure to edit ~/.i3status.conf file. It contains 
+# wlan and eth entry names as your defualt ethernet and wireless modules,
+# say 'enp2s0' and 'wlp2s0.
+# Make sure you have i3status version 2.11 or above with i3 version 4.13 
+# or above. Previous versions might give you errors. 
 
+# Note this configuration uses 'i3bar' as the i3status. For dzen2, xmobar
+# or any other status line, follow:
+# https://i3wm.org/i3status/manpage.html
+
+## Assigning Mod keys: [Alt-Mod1; Win-Mod4] 
 #Assign Alt
 set $mod Mod1 
 
@@ -17,29 +30,19 @@ set $mod2 Mod4
 #Assign Ctrl to modC
 set $modC Ctrl 
 
-# External Monitor:
-
+###################-----<<<<< STARTUP >>>>>-----#############################
+# Display Preferences (using xrandr):
 exec xrandr --output DP-0 --auto --output HDMI-0 --auto --left-of DP-0
-exec xrandr --dpi 100
+exec xrandr --dpi 100 					#Set dpi of the main display
+exec xset dpms 480 					#Auto Screen Turn Off After 8 mins
+#exec redshift
 
-# Keyboard Backlit:
-
-bindsym Shift+F4 exec ~/.scripts/./backlit_high
-bindsym Shift+F3 exec ~/.scripts/./backlit_low
-
-#System:
+# System:
 #exec terminator -x ~/.mountall.sh & exit #Mount All drives on startup
 #exec udiskie #Automounting in /run/media
 exec xfce4-power-manager #Power Manager: Sleep/Lid Close Tool
-exec xset dpms 480 #Auto Screen Turn Off After 8 mins
 #exec terminator -x sudo iw wlp3s0 set power_save on #Auto Start Power saving on wifi
-
-exec alias untarbz2='tar xvfj'
-exec alias untargz='tar xvfz'
-
 #exec terminator -x sleep 5 && zathura ~/Gilbert\ Strang/Introduction\ to\ Linear\ Algebra\,\ 4th\ Edition\ \(6\)/Introduction\ to\ Linear\ Algebra\,\ 4th\ Editio\ -\ Gilbert\ Strang.pdf  
-#exec terminator -x sleep 5 && zathura ~/Davis\,\ Stephen\ R_/C__\ for\ Dummies\ \(9\)/C__\ for\ Dummies\ -\ Davis\,\ Stephen\ R_.pdf
-#exec terminator -x sleep 5 && ranger /media/Work/Lectures/English/
 
 #Conky:
 exec conky & exit
@@ -47,7 +50,7 @@ exec conky -c ~/.conkyrc3 & exit
 exec conky -c ~/.conky_quote & exit
 #exec conky -c ~/.conky_to_do2 & exit
 
-#Other Apps:
+#Other Startup Applications:
 #exec launchy  #--Alt+Space for fg
 #exec dropbox
 #exec skype
@@ -62,13 +65,13 @@ for_window [instance="gsimplecal"] move absolute position 1662 px 20 px
 ######## >>--FONTS--<< ###################
 #font pango:DejaVu Sans Mono Bold 8	##
 #font pango:FontAwesome Bold 9		##
-font pango:Inconsolata Bold 11
+font pango:Inconsolata Bold 11		##
 #font pango:Monospace Bold 6		##
 #font pango:FontAwesome 8		##
 ##########################################
 	
 ####################################
-### MODE LAUNCHING FOR APPS 	####
+#### MODE LAUNCHING FOR APPS 	####
 #mode "App launch" {		####
 #bindsym f exec firefox		####
 #bindsym Return mode "default"  ####
@@ -77,9 +80,20 @@ font pango:Inconsolata Bold 11
 #bindsym $mod2+9 mode "App launch"##
 ####################################
 
+########### Keyboard and mouse settings #############:
+# Keyboard Backlit: (Only for ASUS ROG)
+bindsym Shift+F4 exec ~/.scripts/./backlit_high
+bindsym Shift+F3 exec ~/.scripts/./backlit_low
+
+#Switching Caps with Escape Key
+exec setxkbmap -option caps:escape
+
+#Switching Win/Super_L key with Ctrl (If the window key is damaged)
+# Did it for Dell XPS 15
+#exec xmodmap -e "remove mod4 = Super_L"
+#exec xmodmap -e "add control = Super_L"
 
 # SYNCLIENT MOUSE SETTINGS:
-#Setting Mouse Touchpads
 exec synclient HorizTwoFingerScroll=0
 exec synclient TapButton1=1
 exec synclient TapButton2=3
@@ -90,38 +104,28 @@ exec synclient PalmMinZ=100
 exec synclient PalmMinWidth=2.5
 #syndaemon -i 2 -t -k
 
-#Switching Caps with Escape Key
-exec setxkbmap -option caps:escape
-
-#Switching Win/Super_L key with Ctrl
-#exec xmodmap -e "remove mod4 = Super_L"
-#exec xmodmap -e "add control = Super_L"
-
-#Turn on Redshift on startup:
-#exec redshift &
-#bg
-#clear
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+################# Binding Shortcuts ##################:
 # start a terminal
 bindsym $mod+Return exec terminator
 
 # kill focused window
 #bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod2+x exec i3-dmenu-desktop
+# Dmenu:
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# start dmenu (a program launcher)
+bindsym $mod2+x exec i3-dmenu-desktop
+
 #Mouse Pad Toggle
 #bindsym XF86TouchpadToggle exec synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')
 bindsym Shift+F9 exec synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')
-
 
 # change focus
 bindsym $mod+h focus left
@@ -179,7 +183,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-#Name the workspaces
+#Name the workspaces #Requires Font-Awesome in .fonts folder
 set $tag1 1
 set $tag2 2
 set $tag3 3
@@ -260,7 +264,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 	bindsym Shift+F10 exec amixer set Speaker 1+ toggle | amixer set Master 1+ toggle
 	#bindsym XF86AudioMute exec amixer set Master 1+ toggle
 
-#XPS 15 Bindings:
+#XPS 15 Touch keys Bindings:
 	#Binding player controls:
 	#	bindsym XF86AudioPlay exec playerctl play
 	#Binding Touch KEYS:
@@ -308,10 +312,11 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 	bindsym Shift+F7 exec sleep 1 && exec xset dpms force standby
 	bindsym $mod2+c exec gsimplecal
 	bindsym $mod2+r exec emacs -f eshell
+	
 	#cmus Key binding
- 	bindsym F10 exec cmus-remote -n #Next
-	bindsym F8 exec cmus-remote -r  #Previous
-	bindsym F9 exec cmus-remote -u  #Toogle Pause
+ 	#bindsym F10 exec cmus-remote -n #Next
+	#bindsym F8 exec cmus-remote -r  #Previous
+	#bindsym F9 exec cmus-remote -u  #Toogle Pause
 
 #Border Color Scheme:
 
@@ -328,36 +333,31 @@ client.background       #000000
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-
-	#status_command /home/usr/bin/i3bar #--Traditional i3 bar edited
-
     workspace_buttons yes
     separator_symbol " ! "
     binding_mode_indicator no
-	colors{
+    
+    colors{
 		#Whole color settings
 		background #0E0E0E
 		statusline #A0A0A0
 		separator  #151515
 
-        # Type             border  background font
-        focused_workspace  #AAAAAA #dddddd #111111
-	active_workspace   #333333 #0f676a #ffffff
-        inactive_workspace #111111 #111111 #aaaaaa
-        urgent_workspace   #aa0000 #090000 #ffffff
+        	# Type             border  background font
+        	focused_workspace  #AAAAAA #dddddd #111111
+		active_workspace   #333333 #0f676a #ffffff
+        	inactive_workspace #111111 #111111 #aaaaaa
+        	urgent_workspace   #aa0000 #090000 #ffffff
     }
+    
     # i3bar position
     position top
    	
-	#Using custom i3status.conf
-	status_command i3status -c ~/.i3status.conf
-#	
-	#Using custom weather forecast
-	#status_command i3status | ~/.scripts/weather.py --wrap-i3-status 202396
+    #Using custom i3status.conf
+    status_command i3status -c ~/.i3status.conf
 
-	#Using i3Blocks script
-	#status_command i3blocks
-#
+    #Using i3Blocks script
+    #status_command i3blocks
 }
 
 #Lock using i3 lock
@@ -372,7 +372,7 @@ bindsym Mod4+Escape exec bash ~/.scripts/suspend.sh
 bindsym Mod4+Shift+Escape exec systemctl suspend & bash ~/.scripts/suspend.sh
 #Startup Programs
 exec --no-startup-id nm-applet
-exec feh --bg-fill ~/Pictures/pixels.png
+exec feh --bg-fill ~/.feh/pixels.png
 
 #Screenshot capture (Install scrot first)
 #bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'
