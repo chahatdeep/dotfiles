@@ -98,7 +98,7 @@ for_window [instance="gsimplecal"] move absolute position 1662 px 20 px
 ######## >>--FONTS--<< ###################
 #font pango:DejaVu Sans Mono Bold 8	
 #font pango:FontAwesome Bold 9		
-font pango:Inconsolata Bold 11		
+font pango:Inconsolata Bold 9	
 #font pango:Monospace Bold 6		
 #font pango:FontAwesome 8		
 ##########################################
