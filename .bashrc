@@ -76,20 +76,12 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Enable Vim key bindings
-set -o vi
-set editing-mode vi
-set keymap vi
-
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
-    alias off='sudo pm-suspend-hybrid'
-    alias mount_all='~/.mountall.sh'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -98,31 +90,52 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# Enable Vim key bindings
+set -o vi
+set editing-mode vi
+set keymap vi
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lsl='ls -al --color=auto'
+
+#Application Aliases:
+alias matlab_nodesktop='matlab -nodesktop -nosplash'
+alias conky_all='bash ~/.conky_all'
+alias e='emacs -nw'
+
+# Other Aliases:
+alias off='sudo pm-suspend-hybrid'
+alias mount_all='~/.mountall.sh'
+alias key_led_on='sudo chmod 777 /sys/class/leds/asus\:\:kbd_backlight/brightness'
+alias escape_caps='setxkbmap -option caps:escape'
+    
+# Display Aliases:
 alias monitor='xrandr --output DP-0 --mode 1920x1080'
 alias monitor_ext='xrandr --output HDMI-0 --mode 1920x1080'
 alias monitor_left='xrandr --output HDMI-0 --left-of DP-0'
 alias monitor_right='xrandr --output HDMI-0 --right-of DP-0'
 alias monitor_off='xrandr --output HDMI-0 --off'
-alias matlab_nodesktop='matlab -nodesktop -nosplash'
-alias caps='setxkbmap -option caps:escape'
-alias conky_all='bash ~/.conky_all'
-#alias emacs='emacs -nw'
+
+# Package Installation
+alias app_install='bash ~/.scripts/app_install.sh'
+alias app='echo -e "\033[31m" If it does not work, run app_install. &  echo -e "\e[0m" & sudo dpkg -i'
+alias app2='sudo apt-get install -f'
+
 alias sudo='sudo '
-alias e='emacs -nw'
-alias key_led_on='sudo chmod 777 /sys/class/leds/asus\:\:kbd_backlight/brightness'
-alias cmsc='bash ~/.cmsc.sh'
-alias rename='mv -i'
+alias cmsc='bash ~/.cmsc.sh' #CMSC733 server
+alias rename='mv -i' #Renaming by moving and removing
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias escape_caps='setxkbmap -option caps:escape'
+
+# Untar:
 alias untarbz2='tar xvfj'
 alias untargz='tar xvfz'
-alias untar='tar xvf'
+alias untar='tar xvf' #Auto Untar
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
