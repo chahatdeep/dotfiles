@@ -94,7 +94,7 @@ for_window [instance="gsimplecal"] move absolute position 1662 px 20 px
 
 #############################################################################
 
-P.S. Don't add '#' hashkey at the end of any line to write comments
+#P.S. Don't add '#' hashkey at the end of any line to write comments
 ######## >>--FONTS--<< ###################
 #font pango:DejaVu Sans Mono Bold 8	
 #font pango:FontAwesome Bold 9		
