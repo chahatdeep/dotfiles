@@ -57,15 +57,23 @@ set $modC Ctrl
 ###################-----<<<<< STARTUP >>>>>-----#############################
 # Display Preferences (using xrandr):
 exec xrandr --output DP-0 --auto --output HDMI-0 --auto --left-of DP-0
-exec xrandr --dpi 100 					#Set dpi of the main display
-exec xset dpms 480 					#Auto Screen Turn Off After 8 mins
+#Set dpi of the main display
+exec xrandr --dpi 100 					
+#Auto Screen Turn Off After 8 mins
+exec xset dpms 480 					
 #exec redshift
 
-# System:
-#exec terminator -x ~/.mountall.sh & exit #Mount All drives on startup
-#exec udiskie #Automounting in /run/media
+## System:
+#Mount All drives on startup
+#exec terminator -x ~/.mountall.sh & exit 
+
+#Automounting in /run/media
+#exec udiskie 
+
+#Powertools
 exec xfce4-power-manager #Power Manager: Sleep/Lid Close Tool
 #exec terminator -x sudo iw wlp3s0 set power_save on #Auto Start Power saving on wifi
+#Running pdf file at startup
 #exec terminator -x sleep 5 && zathura ~/Gilbert\ Strang/Introduction\ to\ Linear\ Algebra\,\ 4th\ Edition\ \(6\)/Introduction\ to\ Linear\ Algebra\,\ 4th\ Editio\ -\ Gilbert\ Strang.pdf  
 
 #Conky:
@@ -86,22 +94,23 @@ for_window [instance="gsimplecal"] move absolute position 1662 px 20 px
 
 #############################################################################
 
+P.S. Don't add '#' hashkey at the end of any line to write comments
 ######## >>--FONTS--<< ###################
-#font pango:DejaVu Sans Mono Bold 8	##
-#font pango:FontAwesome Bold 9		##
-font pango:Inconsolata Bold 11		##
-#font pango:Monospace Bold 6		##
-#font pango:FontAwesome 8		##
+#font pango:DejaVu Sans Mono Bold 8	
+#font pango:FontAwesome Bold 9		
+font pango:Inconsolata Bold 11		
+#font pango:Monospace Bold 6		
+#font pango:FontAwesome 8		
 ##########################################
 	
 ####################################
 #### MODE LAUNCHING FOR APPS 	####
-#mode "App launch" {		####
-#bindsym f exec firefox		####
-#bindsym Return mode "default"  ####
-#bindsym Escape mode "default"	####
-#}				####
-#bindsym $mod2+9 mode "App launch"##
+#mode "App launch" {		
+#bindsym f exec firefox		
+#bindsym Return mode "default"  
+#bindsym Escape mode "default"	
+#}				
+#bindsym $mod2+9 mode "App launch"
 ####################################
 
 ########### Keyboard and mouse settings #############:
