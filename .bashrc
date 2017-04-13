@@ -124,6 +124,9 @@ alias app_install='bash ~/.scripts/app_install.sh'
 alias app='echo -e "\033[31m" If it does not work, run app_install. &  echo -e "\e[0m" & sudo dpkg -i'
 alias app2='sudo apt-get install -f'
 
+# Swap Caps and Esacpe Key ('cause vim Rocks)
+alias esc_caps_swap='setxkbmap -option caps:esacpe'
+
 alias sudo='sudo '
 alias cmsc='bash ~/.cmsc.sh' #CMSC733 server
 alias rename='mv -i' #Renaming by moving and removing
@@ -136,6 +139,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias untarbz2='tar xvfj'
 alias untargz='tar xvfz'
 alias untar='tar xvf' #Auto Untar
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
