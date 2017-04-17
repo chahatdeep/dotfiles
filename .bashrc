@@ -1,7 +1,8 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# Author: Chahat Deep Singh
+# Last Updated Date: April 17 2017
 
+######################################################
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -115,6 +116,8 @@ alias escape_caps='setxkbmap -option caps:escape'
 # Display Aliases:
 alias monitor='xrandr --output DP-0 --mode 1920x1080'
 alias monitor_ext='xrandr --output HDMI-0 --mode 1920x1080'
+alias monitor_ext2_1680x1050='xrandr --output HDMI-0 --mode 1680x1050'
+alias monitor_ext_custom='sh ~/.scripts/monitor_ext_custom.sh'
 alias monitor_left='xrandr --output HDMI-0 --left-of DP-0'
 alias monitor_right='xrandr --output HDMI-0 --right-of DP-0'
 alias monitor_off='xrandr --output HDMI-0 --off'
@@ -125,7 +128,7 @@ alias app='echo -e "\033[31m" If it does not work, run app_install. &  echo -e "
 alias app2='sudo apt-get install -f'
 
 # Swap Caps and Esacpe Key ('cause vim Rocks)
-alias esc_caps_swap='setxkbmap -option caps:esacpe'
+alias esc_caps_swap='setxkbmap -option caps:escape'
 
 alias sudo='sudo '
 alias cmsc='bash ~/.cmsc.sh' #CMSC733 server
