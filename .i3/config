@@ -350,6 +350,15 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
  	#bindsym F10 exec cmus-remote -n #Next
 	#bindsym F8 exec cmus-remote -r  #Previous
 	#bindsym F9 exec cmus-remote -u  #Toogle Pause
+	
+	# External Display:
+        #bindsym $mod2+Ctrl+F8 exec xrandr --output HDMI-0 --mode 1920x1080 # External Monitor on Full HD
+        bindsym $mod2+Ctrl+F8 exec xrandr --output HDMI-0 --mode 1680x1050 # External Monitor on: diff resolution
+        bindsym $mod2+H exec xrandr --output HDMI-0 --left-of DP-0 # Monitor on the left
+        bindsym $mod2+L exec xrandr --output HDMI-0  --right-of DP-0  # Monitor on the right
+        bindsym $mod2+Shift+F8 exec xrandr --output HDMI-0 --off # External Monitor on Full HD
+
+
 
 #Border Color Scheme:
 
