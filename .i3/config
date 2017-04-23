@@ -327,7 +327,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 	bindsym $mod2+m exec terminator -x sudo vim ~/work/today
 	bindsym $mod2+s exec terminator -x sudo vim /media/research/Google\ Drive/Credentials_Passwords.txt
 	# bindsym $Mod+Super_L exec calibre
-	bindsym Ctrl+Escape exec terminator -x bash .scripts/suspend 
+	bindsym Ctrl+Escape exec bash ~/.scripts/suspend.sh
 	# bindsym $mod2+b exec terminator -x calc
 	bindsym $mod2+z exec mate-power-preferences
 	bindsym Shift+F2 exec terminator -x sudo wifi-menu -o 
@@ -410,7 +410,7 @@ bindsym Shift+F1 exec sudo pm-suspend-hybrid
 
 
 #Lock using i3 lock + Sleep
-bindsym Mod4+Escape exec bash ~/.scripts/suspend.sh
+#bindsym Mod4+Escape exec bash ~/.scripts/suspend.sh
 bindsym Mod4+Shift+Escape exec systemctl suspend & bash ~/.scripts/suspend.sh
 
 #Startup Programs
