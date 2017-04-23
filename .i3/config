@@ -314,7 +314,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 	bindsym $mod2+4 exec libreoffice
 	bindsym $mod2+5 exec calibre
 	bindsym $mod2+6 exec texmaker
-	bindsym $mod2+7 exec terminator -x cmus
+	#bindsym $mod2+7 exec terminator -x cmus
+	bindsym $mod2+7 exec terminator -x mpsyt
+
 	bindsym $mod2+8 exec chromium
 	#bindsym $mod2+9 exec matlab -softwareopengl
 	bindsym $mod2+9 exec terminator -x matlab -nodesktop -nosplash
