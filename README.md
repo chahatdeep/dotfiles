@@ -1,3 +1,3 @@
 # Arch Home Directory
  -----------------------------------
-## All the dot files neccessary for my Arch home folder.
+## All the dotfiles neccessary for my personalized Arch.
