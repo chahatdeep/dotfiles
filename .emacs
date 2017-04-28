@@ -1,3 +1,4 @@
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -176,7 +177,7 @@
 (setq jedi:setup-keys t)                      ; optional
 (setq jedi:complete-on-dot t)                 ; optional
 (setq jedi:setup-keys t)
-
+(setq auto-complete)                          ; Auto-complete mode on <TAB> key press
 
 ;; Emacs bash-autocompletion:
 (global-set-key "\M-\r" 'shell-resync-dirs)
@@ -216,3 +217,22 @@
      (output-pdf "Zathura")                                    ; [2]
      (output-html "xdg-open")))))
 
+;; More TeX stuff: (from https://piotrkazmierczak.com/2010/emacs-as-the-ultimate-latex-editor/)
+
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq TeX-save-query nil)
+;(setq TeX-PDF-mode t)
+;; The last option, ;(setq TeX-PDF-mode t), is commented (all lines beginning with ; are a comment in Emacs Lisp), but you can uncomment it if you want to have PDFLaTeX mode enabled by default for all documents.
+
+
+;; Sr-speedbar on the left for fast switch between codes on left hand side:
+(require 'sr-speedbar)
+;(sr-speedbar-width-x 40)
+(setq speedbar-show-unknown-files t) ; show all files
+(setq speedbar-use-images nil) ; use text for buttons in Sr-speedbar
+(global-set-key (kbd "C-x C-s") 'sr-speedbar-toggle) ; Toggle sr-speedbar
+(setq sr-speedbar-refresh-turn-on) ; Auto refresh On
+(global-set-key (kbd "C-x TAB") 'sr-speedbar-select-window) ; Shortcut to go to the window
+(setq sr-speedbar-right-side nil) ; Speedbar on left-hand-side
+(sr-speedbar-open)
