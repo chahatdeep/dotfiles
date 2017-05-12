@@ -1,5 +1,4 @@
 ## All the dotfiles neccessary for my personalized Arch.
-----------------------------------
 # WARNING: For your own sake, CHECK THE SCRIPTS before you use ANYTHING!
 
  
