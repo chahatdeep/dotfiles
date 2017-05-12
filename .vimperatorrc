@@ -1,0 +1,80 @@
+" Vimperator config:
+" Copyright to Hersh Deep (hershdeep@gmail.com)
+" These settings prevent Vimperator from overwriting my preferred Firefox settings.
+
+set! browser.startup.page=1
+
+map J gt
+map K gT
+
+nnoremap <C-b> :bmarks 
+
+
+" Miscellaneous
+set history=50
+
+" Scrolling
+"" Vimperator does not give the user direct control over scroll distance. Vimium (for
+"" Chromium/Google Chrome) uses a nice 60px by default; 2<dir> is much smaller, but it
+"" feels better in Vimperator.
+nnoremap j 4j
+nnoremap k 4k
+nnoremap h 4h
+nnoremap l 4l
+
+noremap d <C-d>
+noremap u <C-u>
+noremap x :q<CR>
+noremap s :stop<CR>
+
+" Display
+"" show only the tab bar
+set gui=tabs
+"" show numbers on each tab
+set tabnumbers
+
+"" see http://code.google.com/p/vimperator-labs/issues/detail?id=311
+set popups=tab,resized
+
+" Find
+"" perform incremental searching
+set incsearch
+"" highlight search results
+set hlsearch
+"" typically (see below) ignore case
+set ignorecase
+"" only consider case if an upper case char is used
+set smartcase
+
+" Maps
+
+""" General Mappings
+nnoremap <S-u> :undo<CR>
+
+
+"""" Print
+noremap  <C-p> :dialog print<CR>
+
+""" Tabs
+
+" Private Window
+noremap  <C-n> :winopen -private<CR>
+
+""" Mode Overrides
+"""" Insert Mode
+imap <C-t> <Esc><C-t>
+imap <C-w> <Esc><C-w>
+
+"""" Command Mode
+cmap <C-k> <Esc><C-k>
+cmap <C-l> <Esc><C-l>
+cmap <C-t> <Esc><C-t>
+
+" Style
+"" See http://bbs.archlinux.org/viewtopic.php?id=69123
+"" See http://github.com/VoQn/vimperator-colorscheme/raw/e13afec1be5ec1c9de775d0e2a464862f8d3a453/colors/default.vimp
+hi CompItem  font-size: 10px;
+hi CompTitle color: magenta; font-weight: bold; font-size: 10px;
+hi Hint -append  font-size: 14px;
+hi CmdLine background: black; color: white; transition: all 0.25s; 
+
