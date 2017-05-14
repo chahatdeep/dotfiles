@@ -35,6 +35,7 @@
 #### MATLAB:
 ###### Before installing any MATLAB toolbox on an already installed MATLAB, do:
 
+```
 sudo chmod -R ugo+rw /usr/local/MATLAB
 sudo chown -R $USER /usr/local/MATLAB
-
+```
