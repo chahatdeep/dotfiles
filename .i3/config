@@ -288,7 +288,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #}
 
 #Binding volume keys:
-	bindsym Ctrl+F12 exec pactl -- set-sink-volume 0 +10%
+	%bindsym Ctrl+F12 exec pactl set-sink-volume 0 +10% # ASUS ROG Config
+	bindsym Ctrl+F12 exec pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +10% # CVL System
 	bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 	bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 	bindsym Shift+F11 exec amixer set Master 5%-
