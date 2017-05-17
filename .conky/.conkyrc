@@ -111,4 +111,3 @@ ${voffset -7}${font Julius:bold:size=8}NAME ${goto 90}PID${goto 120} CPU% ${alig
 ${font MrsEavesSmartLig:bold:size=10}${goto 9}${top name 1}${goto 85}${top pid 1}${goto 120}${top cpu 1}${goto 185}${top mem 1}${font}
 ${font MrsEavesSmartLig:bold:size=10}${goto 9}${top name 2}${goto 85}${top pid 2}${goto 120}${top cpu 2}${goto 185}${top mem 2}${font}
 ${font MrsEavesSmartLig:bold:size=10}${goto 9}${top name 3}${goto 85}${top pid 3}${goto 120}${top cpu 3}${goto 185}${top mem 3}${font}
-
