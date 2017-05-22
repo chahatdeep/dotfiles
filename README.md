@@ -66,10 +66,4 @@ Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below
 
 Here's our logo (hover to see the title text):
 
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
-Reference-style: 
-![alt text][logo]
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+Inline-style: >asdasdasdasdhub.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
