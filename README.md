@@ -33,7 +33,7 @@
 
 ### Installation Tweaks:
 #### MATLAB:
-###### Before installing any MATLAB toolbox on an already installed MATLAB, do:
+Before installing any MATLAB toolbox on an already installed MATLAB, do:
 
 ```
 sudo chmod -R ugo+rw /usr/local/MATLAB
@@ -41,8 +41,8 @@ sudo chown -R $USER /usr/local/MATLAB
 ```
 
 #### Appearance:
-###### lxapperance will do it for you!
-###### You also want QT, GTK 2.0, and GTK+ to look the same as your chosen theme.
+``lxapperance`` will do it for you!
+You also want QT, GTK 2.0, and GTK+ to look the same as your chosen theme.
 
 ```
 sudo apt-get install lxappearance gtk-chtheme qt4-qtconfig
