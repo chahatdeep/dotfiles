@@ -39,6 +39,7 @@ Before installing any MATLAB toolbox on an already installed MATLAB, do:
 sudo chmod -R ugo+rw /usr/local/MATLAB
 sudo chown -R $USER /usr/local/MATLAB
 ```
+***
 
 #### Appearance:
 ``lxapperance`` will do it for you!
@@ -75,7 +76,7 @@ sudo apt update
 sudo apt install arc-theme  
 ```
 and set the desired theme using ``lxapperance`` from the terminal.
-
+***
 
 For Network Manager Applet, install ``nm-applet``:
 ```
@@ -86,7 +87,7 @@ and add: `` exec --no-startup-id nm-applet `` to your i3 config file. Now, open 
 #### A simple Notification Utility ``dunst``
 This is a simple notification utility. It isn't absolutely required to get i3 working, but if you don't install it then you won't get notification about things like wireless network status.
 
-
+***
 
 ### To Do:
 Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below:
