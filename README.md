@@ -54,8 +54,8 @@ exec --no-startup-id nm-applet
 ```
 to your i3 config file. Now, open ``lxapperance`` from your console and tweak the window properties that suits best for you :)
 
-###### A simple Notification Utility ``dunst``
-
+#### A simple Notification Utility ``dunst``
+This is a simple notification utility. It isn't absolutely required to get i3 working, but if you don't install it then you won't get notification about things like wireless network status.
 
 
 
