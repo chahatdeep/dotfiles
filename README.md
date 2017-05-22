@@ -78,7 +78,7 @@ sudo apt install arc-theme
 and set the desired theme using ``lxapperance`` from the terminal.
 ***
 
-For Network Manager Applet, install ``nm-applet``:
+#### For Network Manager Applet, install ``nm-applet``:
 ```
 sudo apt-get install nm-applet
 ```
