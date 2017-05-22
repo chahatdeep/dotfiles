@@ -91,7 +91,7 @@ This is a simple notification utility. It isn't absolutely required to get i3 wo
 
 ### To Do:
 Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below:
-[i3wm: ``i3lock``, ``xautolock`` & Suspend to Disk](http://rabexc.org/posts/awesome-xautolock-battery)
+> [i3wm: ``i3lock``, ``xautolock`` & Suspend to Disk](http://rabexc.org/posts/awesome-xautolock-battery)
 
 
-> [Read regarding writing a cool git readme file!](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+> [Read about how to write a cool git readme file!](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
