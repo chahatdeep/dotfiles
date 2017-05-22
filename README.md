@@ -47,6 +47,15 @@ You also want QT, GTK 2.0, and GTK+ to look the same as your chosen theme.
 ```
 sudo apt-get install lxappearance gtk-chtheme qt4-qtconfig
 ```
+Now, open the apperance setting using ``lxapperance`` from the terminal. Check if you have any dark theme available! If not, try one of theme from this [link](http://www.devpy.me/10-of-the-best-linux-themes-compared/).
+Or simply try:
+1. Adapta:
+``` sudo apt-add-repository ppa:tista/adapta -y ```
+``` sudo apt-get update ```
+``` sudo apt-get install adapta-gtk-theme ```
+
+2. Numix:
+
 
 For Network Manager Applet, install ``nm-applet``:
 ```
