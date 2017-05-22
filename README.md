@@ -48,9 +48,8 @@ You also want QT, GTK 2.0, and GTK+ to look the same as your chosen theme.
 sudo apt-get install lxappearance gtk-chtheme qt4-qtconfig
 ```
 Now, open the apperance setting using ``lxapperance`` from the terminal. Check if you have any dark theme available! If not, try one of theme from this [link](http://www.devpy.me/10-of-the-best-linux-themes-compared/).
-Or simply try:
+Or simply try one of these:
 1. Adapta:
-
 ``` 
 sudo apt-add-repository ppa:tista/adapta -y
 sudo apt-get update ``
@@ -58,6 +57,24 @@ sudo apt-get install adapta-gtk-theme
 ```
 
 2. Numix:
+```
+sudo add-apt-repository ppa:numix/ppa  
+sudo apt update  
+sudo apt install numix-gtk-theme 
+```
+3. Vertex:
+```
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/vertex-theme.list"  
+sudo apt update  
+sudo apt install vertex-theme  
+```
+4. Arc:(Probably the best available)
+```
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list"  
+sudo apt update  
+sudo apt install arc-theme  
+```
+and set the desired theme using ``lxapperance`` from the terminal.
 
 
 For Network Manager Applet, install ``nm-applet``:
