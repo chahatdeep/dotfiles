@@ -52,4 +52,4 @@ For Network Manager Applet, install ``nm-applet`` and add
 ```
 exec --no-startup-id nm-applet 
 ```
-to your i3 config file.
+to your i3 config file. Now, open ``lxapperance`` from your console and tweak the window properties that suits best for you :)
