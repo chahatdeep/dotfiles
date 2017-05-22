@@ -51,11 +51,11 @@ Now, open the apperance setting using ``lxapperance`` from the terminal. Check i
 Or simply try:
 1. Adapta:
 
-`` sudo apt-add-repository ppa:tista/adapta -y ``
-
-`` sudo apt-get update ``
-
-`` sudo apt-get install adapta-gtk-theme ``
+``` 
+sudo apt-add-repository ppa:tista/adapta -y
+sudo apt-get update ``
+sudo apt-get install adapta-gtk-theme 
+```
 
 2. Numix:
 
