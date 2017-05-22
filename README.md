@@ -64,6 +64,4 @@ Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below
 [i3wm: ``i3lock``, ``xautolock`` & Suspend to Disk](http://rabexc.org/posts/awesome-xautolock-battery)
 
 
-Here's our logo (hover to see the title text):
-
-Inline-style: >asdasdasdasdhub.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+> [Read regarding writing a cool git readme file!](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
