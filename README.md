@@ -48,11 +48,11 @@ You also want QT, GTK 2.0, and GTK+ to look the same as your chosen theme.
 sudo apt-get install lxappearance gtk-chtheme qt4-qtconfig
 ```
 
-For Network Manager Applet, install ``nm-applet`` and add 
+For Network Manager Applet, install ``nm-applet``:
 ```
-exec --no-startup-id nm-applet 
+sudo apt-get install nm-applet
 ```
-to your i3 config file. Now, open ``lxapperance`` from your console and tweak the window properties that suits best for you :)
+and add: `` exec --no-startup-id nm-applet `` to your i3 config file. Now, open ``lxapperance`` from your console and tweak the window properties that suits best for you :)
 
 #### A simple Notification Utility ``dunst``
 This is a simple notification utility. It isn't absolutely required to get i3 working, but if you don't install it then you won't get notification about things like wireless network status.
