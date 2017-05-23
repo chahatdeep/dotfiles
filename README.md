@@ -1,6 +1,5 @@
-## All the dotfiles neccessary for my personalized Arch.
-## WARNING: 
-### For your own sake, CHECK THE SCRIPTS before you use ANYTHING!
+## All the dotfiles neccessary for my personalized Arch Linux.
+### WARNING: For your own sake, CHECK THE SCRIPTS before you use ANYTHING!
 
  ```
       ██            ██     ████ ██  ██                
