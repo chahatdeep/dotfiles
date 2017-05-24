@@ -75,6 +75,8 @@ sudo apt-get install nm-applet
 ```
 and add: `` exec --no-startup-id nm-applet `` to your i3 config file. Now, open ``lxapperance`` from your console and tweak the window properties that suits best for you :)
 
+- or install [TWMN: A notifier for i3 like Tiling Window Manager](https://github.com/sboli/twmn)
+
 #### A simple Notification Utility ``dunst``
 This is a simple notification utility. It isn't absolutely required to get i3 working, but if you don't install it then you won't get notification about things like wireless network status.
 ***
@@ -103,6 +105,6 @@ Here is the reference [link](http://www.webupd8.org/2016/09/how-to-install-avant
 ### To Do:
 Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below:
 > [i3wm: ``i3lock``, ``xautolock`` & Suspend to Disk](http://rabexc.org/posts/awesome-xautolock-battery)
-
+> Install [TWMN: A notifier for i3 like Tiling Window Manager](https://github.com/sboli/twmn)
 
 > [Read about how to write a cool git readme file!](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
