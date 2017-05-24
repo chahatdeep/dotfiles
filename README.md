@@ -76,6 +76,7 @@ sudo apt-get install nm-applet
 and add: `` exec --no-startup-id nm-applet `` to your i3 config file. Now, open ``lxapperance`` from your console and tweak the window properties that suits best for you :)
 
 - or install [TWMN: A notifier for i3 like Tiling Window Manager](https://github.com/sboli/twmn)
+![Notifier for Tiling Manager](https://github.com/sboli/twmn/blob/master/screencast.gif)
 
 #### A simple Notification Utility ``dunst``
 This is a simple notification utility. It isn't absolutely required to get i3 working, but if you don't install it then you won't get notification about things like wireless network status.
