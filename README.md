@@ -103,6 +103,7 @@ Desktop Integration Plugins
 
 -Mailnag GNOME Online Accounts Plugin:
 ``sudo apt-get install mailnag-goa-plugin``
+
 [Reference](https://github.com/pulb/mailnag)
 
 
