@@ -82,6 +82,31 @@ and add: `` exec --no-startup-id nm-applet `` to your i3 config file. Now, open 
 This is a simple notification utility. It isn't absolutely required to get i3 working, but if you don't install it then you won't get notification about things like wireless network status.
 ***
 
+#### Mailnag notifier:
+
+For debian based systems:
+```
+sudo add-apt-repository ppa:pulb/mailnag
+sudo apt-get update
+sudo apt-get install mailnag
+```
+For Arch Linux:
+Either run ``yaourt -S mailnag`` or ``packer -S mailnag`` (as root) to install the package.
+Mailnag is available in the AUR repository.
+Desktop Integration Plugins
+
+-Mailnag Unity Plugin
+``sudo apt-get install mailnag-unity-plugin``
+
+-Mailnag GNOME Shell Extension
+``sudo apt-get install gnome-shell-mailnag``
+
+-Mailnag GNOME Online Accounts Plugin
+``sudo apt-get install mailnag-goa-plugin``
+
+[Reference](https://github.com/pulb/mailnag)
+
+
 #### Avant Window Navigator: (Mac-like Dock)
 ```
 sudo add-apt-repository ppa:nilarimogard/webupd8
