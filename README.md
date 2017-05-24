@@ -95,15 +95,14 @@ Either run ``yaourt -S mailnag`` or ``packer -S mailnag`` (as root) to install t
 Mailnag is available in the AUR repository.
 Desktop Integration Plugins
 
--Mailnag Unity Plugin
+-Mailnag Unity Plugin:
 ``sudo apt-get install mailnag-unity-plugin``
 
--Mailnag GNOME Shell Extension
+-Mailnag GNOME Shell Extension:
 ``sudo apt-get install gnome-shell-mailnag``
 
--Mailnag GNOME Online Accounts Plugin
+-Mailnag GNOME Online Accounts Plugin:
 ``sudo apt-get install mailnag-goa-plugin``
-
 [Reference](https://github.com/pulb/mailnag)
 
 
