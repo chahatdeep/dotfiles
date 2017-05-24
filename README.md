@@ -11,12 +11,12 @@
 ░░██████░░██████   ░░██   ░██  ░██ ███░░██████ ██████ 
  ░░░░░░  ░░░░░░     ░░    ░░   ░░ ░░░  ░░░░░░ ░░░░░░  
  
-  ▓▓▓▓▓▓▓▓▓▓
+  ▓▓▓▓▓▓▓▓▓▓▓
  ░▓ about   ▓ Custom Linux Config Files
  ░▓ author  ▓ Chahat Deep Singh <chahatdeepsingh@gmail.com>
  ░▓ support ▓ archahat.wordpress.com
- ░▓▓▓▓▓▓▓▓▓▓
- ░░░░░░░░░░
+ ░▓▓▓▓▓▓▓▓▓▓▓
+ ░░░░░░░░░░░
 ```
 
 ### MAY CONTAIN BIOHAZARDS, VIRUSES, BUGS AND BLACK HOLES!
