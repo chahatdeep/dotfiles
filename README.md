@@ -98,7 +98,7 @@ sudo apt install --no-install-recommends awn-applets-all
 I used "--install-recommends" for the AWN package because on Linux Mint, recommended packages are not installed by default, and that would result in awn-settings package (among a few others) not being installed. For the awn-applets-all, I used "--no-install-recommends" to prevent it from installing Unity Control Center and other Unity / GNOME Flashback packages along with the AWN applets in Xubuntu, Ubuntu MATE, etc (this is not the case for Linux Mint).
 Here is the reference [link](http://www.webupd8.org/2016/09/how-to-install-avant-window-navigator.html).
 
-**
+***
 
 ### To Do:
 Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below:
