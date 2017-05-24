@@ -77,8 +77,27 @@ and add: `` exec --no-startup-id nm-applet `` to your i3 config file. Now, open 
 
 #### A simple Notification Utility ``dunst``
 This is a simple notification utility. It isn't absolutely required to get i3 working, but if you don't install it then you won't get notification about things like wireless network status.
-
 ***
+
+#### Avant Window Navigator: (Mac-like Dock)
+```
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt update
+sudo apt install --install-recommends avant-window-navigator
+```
+if Avant Window Navigator crashes the first time you run it, use the following command to restart gconfd-2:
+```
+killall gconfd-2
+```
+Then, use Synaptic Package Manager to install the AWN applets you want to use (simply search for "awn applet" and you should get a complete list of applets).
+
+Or, to install all the available applets (except the DockBarX AWN applet, which is not part of AWN), use the following command:
+```
+sudo apt install --no-install-recommends awn-applets-all
+```
+I used "--install-recommends" for the AWN package because on Linux Mint, recommended packages are not installed by default, and that would result in awn-settings package (among a few others) not being installed. For the awn-applets-all, I used "--no-install-recommends" to prevent it from installing Unity Control Center and other Unity / GNOME Flashback packages along with the AWN applets in Xubuntu, Ubuntu MATE, etc (this is not the case for Linux Mint).
+Here is the reference [link](http://www.webupd8.org/2016/09/how-to-install-avant-window-navigator.html).
+
 
 ### To Do:
 Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below:
