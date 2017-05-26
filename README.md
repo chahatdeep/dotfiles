@@ -135,7 +135,7 @@ sudo apt-get update
 sudo apt-get install rabbitvcs-nautilus rabbitvcs-cli
 ```
 Note: If you are using ``nautilus3`` instead of ``nautilus``, do ``sudo apt-get install rabbitvcs-nautilus3``
-
+[Reference](http://wiki.rabbitvcs.org/wiki/install/ubuntu)
 ***
 
 ### To Do:
