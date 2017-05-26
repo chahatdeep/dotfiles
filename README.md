@@ -127,6 +127,16 @@ I used "--install-recommends" for the AWN package because on Linux Mint, recomme
 Here is the reference [link](http://www.webupd8.org/2016/09/how-to-install-avant-window-navigator.html).
 
 ***
+### Git GUI Application for Linux:
+Apart from ``gitkraken``, ``rabbitvcs`` is an amazing app which comes with an integration of ``nautilus``. Add ppa:
+```
+sudo add-apt-repository ppa:rabbitvcs/ppa
+sudo apt-get update
+sudo apt-get install rabbitvcs-nautilus rabbitvcs-cli
+```
+Note: If you are using ``nautilus3`` instead of ``nautilus``, do ``sudo apt-get install rabbitvcs-nautilus3``
+
+***
 
 ### To Do:
 Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below:
