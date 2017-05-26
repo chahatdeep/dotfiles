@@ -141,6 +141,7 @@ Note: If you are using ``nautilus3`` instead of ``nautilus``, do ``sudo apt-get 
 ### To Do:
 Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below:
 > [i3wm: ``i3lock``, ``xautolock`` & Suspend to Disk](http://rabexc.org/posts/awesome-xautolock-battery)
+
 > Install [TWMN: A notifier for i3 like Tiling Window Manager](https://github.com/sboli/twmn)
 
 > [Read about how to write a cool git readme file!](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
