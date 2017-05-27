@@ -152,7 +152,7 @@ lsb_release -a
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 ```
-[Mirrors](http://wiki.ros.org/ROS/Installation/UbuntuMirrors)/[Source Debs](http://wiki.ros.org/DebianPackageSources) are also available.
+- [Mirrors](http://wiki.ros.org/ROS/Installation/UbuntuMirrors)/[Source Debs](http://wiki.ros.org/DebianPackageSources) are also available.
 
 3. Set up your keys
 ```
@@ -164,32 +164,32 @@ Make sure your packages are up to date:
 ```
 sudo apt-get update
 ```
-If you are using Ubuntu Trusty 14.04.2 and experience dependency issues during the ROS installation, you may have to install some additional system dependencies. Do not install these packages if you are using 14.04, it will destroy your X server:
+- If you are using Ubuntu Trusty 14.04.2 and experience dependency issues during the ROS installation, you may have to install some additional system dependencies. Do not install these packages if you are using 14.04, it will destroy your X server:
 ```
 sudo apt-get install xserver-xorg-dev-lts-utopic mesa-common-dev-lts-utopic libxatracker-dev-lts-utopic libopenvg1-mesa-dev-lts-utopic libgles2-mesa-dev-lts-utopic libgles1-mesa-dev-lts-utopic libgl1-mesa-dev-lts-utopic libgbm-dev-lts-utopic libegl1-mesa-dev-lts-utopic
 ```
-Do not install the above packages if you are using 14.04, it will destroy your X server
-Alternatively, try installing just this to fix dependency issues:
+- Do not install the above packages if you are using 14.04, it will destroy your X server
+- Alternatively, try installing just this to fix dependency issues:
 ```
 sudo apt-get install libgl1-mesa-dev-lts-utopic
 ```
 
-Desktop-Full Install: (Recommended) : ROS, [rqt](http://wiki.ros.org/rqt), [rviz](http://wiki.ros.org/rviz), robot-generic libraries, 2D/3D simulators and 2D/3D perception.
+- Desktop-Full Install: (Recommended) : ROS, [rqt](http://wiki.ros.org/rqt), [rviz](http://wiki.ros.org/rviz), robot-generic libraries, 2D/3D simulators and 2D/3D perception.
 ```
 sudo apt-get install ros-indigo-desktop-full
 ```
-or just the basic desktop install which comes with standard ROS, rqt, rviz, and robot-generic libraries.
+- or just the basic desktop install which comes with standard ROS, rqt, rviz, and robot-generic libraries.
 ```
 sudo apt-get install ros-indigo-desktop
 ```
 
-For installing an individual Package, (specific ROS package) replace underscores with dashes of the package name:
+- For installing an individual Package, (specific ROS package) replace underscores with dashes of the package name:
 ```
 sudo apt-get install ros-indigo-PACKAGE
 ```
 example: ``sudo apt-get install ros-indigo-slam-gmapping``
 
-To find available packages, use:
+- To find available packages, use:
 ``apt-cache search ros-indigo``
 
 
@@ -199,13 +199,13 @@ sudo rosdep init
 rosdep update
 ```
 6. Environment setup
-Adding ROS environment variables to your bash session:
+- Adding ROS environment variables to your bash session:
 ```
 echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 7. Getting rosinstall:
-It enables you to easily download many source trees for ROS packages with one command:
+- It enables you to easily download many source trees for ROS packages with one command:
 ``sudo apt-get install python-rosinstall``
 
 8. See the next section for ROS turorials. Enjoy! 
