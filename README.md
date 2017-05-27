@@ -143,22 +143,23 @@ Note: If you are using ``nautilus3`` instead of ``nautilus``, do ``sudo apt-get 
 ```
 lsb_release -a
 ```
-
+***
 ### Everything about ROS:
-1. Installing ROS Indigo (Ubuntu 14.04): ([Reference](http://wiki.ros.org/indigo/Installation/Ubuntu))
-- Configure your Ubuntu repositories: Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." Follow [this](https://help.ubuntu.com/community/Repositories/Ubuntu)
-- Setup your sources.list 
+#### Installing ROS Indigo (Ubuntu 14.04): ([Reference](http://wiki.ros.org/indigo/Installation/Ubuntu))
+1. Configure your Ubuntu repositories: Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." Follow [this](https://help.ubuntu.com/community/Repositories/Ubuntu)
+
+2. Setup your sources.list 
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 ```
 [Mirrors](http://wiki.ros.org/ROS/Installation/UbuntuMirrors)/[Source Debs](http://wiki.ros.org/DebianPackageSources) are also available.
 
-- Set up your keys
+3. Set up your keys
 ```
 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
 ```
 
-- Installation
+4. Installation
 Make sure your packages are up to date:
 ```
 sudo apt-get update
@@ -192,10 +193,30 @@ To find available packages, use:
 ``apt-cache search ros-indigo``
 
 
+5. Initialize rosdep:
+```
+sudo rosdep init
+rosdep update
+```
+6. Environment setup
+Adding ROS environment variables to your bash session:
+```
+echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+7. Getting rosinstall:
+It enables you to easily download many source trees for ROS packages with one command:
+``sudo apt-get install python-rosinstall``
+
+8. See the next section for ROS turorials. Enjoy! 
+
+*All credits to ROS community and their [Installation Guidlines](http://wiki.ros.org/indigo/Installation/Ubuntu).
+
+#### ROS Tutorials (for you!):
 
 
 
-
+***
 ### To Do:
 Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below:
 > [i3wm: ``i3lock``, ``xautolock`` & Suspend to Disk](http://rabexc.org/posts/awesome-xautolock-battery)
