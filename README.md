@@ -138,6 +138,64 @@ Note: If you are using ``nautilus3`` instead of ``nautilus``, do ``sudo apt-get 
 [Reference](http://wiki.rabbitvcs.org/wiki/install/ubuntu)
 ***
 
+### Handy-Stuff:
+- Checking your Ubuntu version:
+```
+lsb_release -a
+```
+
+### Everything about ROS:
+1. Installing ROS Indigo (Ubuntu 14.04): ([Reference](http://wiki.ros.org/indigo/Installation/Ubuntu))
+- Configure your Ubuntu repositories: Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." Follow [this](https://help.ubuntu.com/community/Repositories/Ubuntu)
+- Setup your sources.list 
+```
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+```
+[Mirrors](http://wiki.ros.org/ROS/Installation/UbuntuMirrors)/[Source Debs](http://wiki.ros.org/DebianPackageSources) are also available.
+
+- Set up your keys
+```
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+```
+
+- Installation
+Make sure your packages are up to date:
+```
+sudo apt-get update
+```
+If you are using Ubuntu Trusty 14.04.2 and experience dependency issues during the ROS installation, you may have to install some additional system dependencies. Do not install these packages if you are using 14.04, it will destroy your X server:
+```
+sudo apt-get install xserver-xorg-dev-lts-utopic mesa-common-dev-lts-utopic libxatracker-dev-lts-utopic libopenvg1-mesa-dev-lts-utopic libgles2-mesa-dev-lts-utopic libgles1-mesa-dev-lts-utopic libgl1-mesa-dev-lts-utopic libgbm-dev-lts-utopic libegl1-mesa-dev-lts-utopic
+```
+Do not install the above packages if you are using 14.04, it will destroy your X server
+Alternatively, try installing just this to fix dependency issues:
+```
+sudo apt-get install libgl1-mesa-dev-lts-utopic
+```
+
+Desktop-Full Install: (Recommended) : ROS, [rqt](http://wiki.ros.org/rqt), [rviz](http://wiki.ros.org/rviz), robot-generic libraries, 2D/3D simulators and 2D/3D perception.
+```
+sudo apt-get install ros-indigo-desktop-full
+```
+or just the basic desktop install which comes with standard ROS, rqt, rviz, and robot-generic libraries.
+```
+sudo apt-get install ros-indigo-desktop
+```
+
+For installing an individual Package, (specific ROS package) replace underscores with dashes of the package name:
+```
+sudo apt-get install ros-indigo-PACKAGE
+```
+example: ``sudo apt-get install ros-indigo-slam-gmapping``
+
+To find available packages, use:
+``apt-cache search ros-indigo``
+
+
+
+
+
+
 ### To Do:
 Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below:
 > [i3wm: ``i3lock``, ``xautolock`` & Suspend to Disk](http://rabexc.org/posts/awesome-xautolock-battery)
@@ -147,3 +205,4 @@ Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below
 > [Read about how to write a cool git readme file!](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 > [Create your chahatdeep.github.io (change the website name from the settings)](https://github.com/chahatdeep/editchahatdeep.github.io)
+
