@@ -241,7 +241,7 @@ source ~/.bashrc
 
     3. Install [ADB](https://developer.android.com/studio/command-line/adb.html)
         ```
-        apt-get install android-tools-adb android-tools-fastboot
+        sudo apt-get install android-tools-adb android-tools-fastboot
         ```
 2. Configure the drone:
     1. Make sure ADB works: connect your platform with a micro usb cable and type in console:
