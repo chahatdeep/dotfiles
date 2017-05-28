@@ -11,11 +11,11 @@
 ░░██████░░██████  ░░██    ░██  ░██ ███░░██████ ██████ 
  ░░░░░░  ░░░░░░     ░░    ░░   ░░ ░░░  ░░░░░░ ░░░░░░  
  
-  ▓▓▓▓▓▓▓▓▓▓▓
+  ▓▓▓▓▓▓▓▓▓▓
  ░▓ about   ▓ Custom Linux Config Files
  ░▓ author  ▓ Chahat Deep Singh <chahatdeepsingh@gmail.com>
  ░▓ support ▓ archahat.wordpress.com
- ░▓▓▓▓▓▓▓▓▓▓▓
+ ░▓▓▓▓▓▓▓▓▓▓
  ░░░░░░░░░░░
 ```
 
@@ -212,9 +212,243 @@ source ~/.bashrc
 
 *All credits to ROS community and their [Installation Guidlines](http://wiki.ros.org/indigo/Installation/Ubuntu).
 
+*** 
 #### ROS Tutorials (for you!):
 
 
+
+
+
+
+***
+
+### Snapdragon Flight:
+#### For this manual the host operating system is assumed to be Ubuntu 16.04
+
+1. Set up the host platform:
+    1. [Install ROS](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+    2. Add the following lines to your `~/.bashrc`:
+
+        ```
+        export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
+        #export ROS_IP=192.168.1.96
+        export ROS_IP=$(ifconfig | grep -Po '(?<=inet addr:)192.168.1[.0-9]+' )
+        export ROS_HOSTNAME=$ROS_IP
+        export ROS_MASTER_URI=http://192.168.1.1:11311
+        ```
+
+        **Note**: for the ROS_IP variable you can hardcode the ip address, but it can change, that is why the regexp is used.
+
+    3. Install [ADB](https://developer.android.com/studio/command-line/adb.html)
+        ```
+        apt-get install android-tools-adb android-tools-fastboot
+        ```
+2. Configure the drone:
+    1. Make sure ADB works: connect your platform with a micro usb cable and type in console:
+        ```
+        adb devices
+        ```
+
+        The output will be:
+
+        ```
+        * daemon not running. starting it now on port 5037 *
+        * daemon started successfully *
+        List of devices attached 
+        1daf9fb4   device
+        ```
+        Now, in order to connect to platform type ```adb shell```
+
+        Note: **DO NOT** use USB 3.0 cable (it does not work)! Use a micro usb one instead. If you see an error message 'Unable to mount Android' - that is OK.
+
+    2. Connect via SSH:
+        - Connect to the drone's wi-fi network (Atlanticus...) and then:
+            ``` 
+            ssh linaro@192.168.1.1
+
+            The authenticity of host '192.168.1.1 (192.168.1.1)' can't be established.
+            ECDSA key fingerprint is SHA256:ckKLZj8FB9OoekLIEmwPNfXi21S3EY96YrBm3hzB6sA.
+            Are you sure you want to continue connecting (yes/no)? yes
+            Warning: Permanently added '192.168.1.1' (ECDSA) to the list of known hosts.
+            linaro@192.168.1.1's password: 
+            ```
+   
+            The password is '**linaro**'
+
+        - Set root password:
+            ```
+            passwd root
+            <enter new UNIX password>
+            ```
+     
+            Set it to '**mathematical**'
+
+        - Login as root:
+            ```
+            su
+            ```
+    3. Add the following lines to your `/root/.bashrc`:
+        ```
+        export HOME=/root
+        cd $HOME
+
+        export MV_SDK=/opt/qualcomm/mv/lib/mv
+        source /opt/ros/indigo/setup.bash
+        export ROS_IP=192.168.1.1
+        export ROS_HOSTNAME=$ROS_IP
+        export ROS_MASTER_URI=http://$ROS_HOSTNAME:11311
+        ```
+    4. Configure the Wi-Fi:
+        - Configure the station mode by editing the `/etc/wpa_supplicant/wpa_supplicant.conf`:
+          Configure one of the 'network' sections (make sure only one 'network' section is uncommented):
+            ```
+            network={
+                     ssid="Land of Ooo"
+                     proto=RSN
+                     key_mgmt=WPA-PSK
+                     pairwise=CCMP TKIP
+                     group=CCMP TKIP
+                     psk="mathematical"
+            } 
+            ```
+            This configuration is for the Land of Ooo router. For different networks edit accordingly.
+        
+        - You can change SSID for the access point mode in ```/etc/hostapd.conf```
+
+    5. Learn how to switch between Wi-Fi modes:
+        Access point (by default):
+        ```
+        /usr/local/qr-linux/wificonfig.sh -s softap
+        ```
+        Station mode (connect to router):
+        ```
+        /usr/local/qr-linux/wificonfig.sh -s station
+        ```
+        After this you will need to reboot:
+        ```
+        reboot
+        ```
+
+        **NOTE!** For some reason ROS refuses to properly communicate with host through the station mode, use AP instead! Station mode is useful if you need Internet access on the platform.
+
+3. Move some files to the platform. Go to the 'snapdragon_setup' folder, then execute (with platform connected via usb):
+    ```
+    adb push ./PX4/px4.config /usr/share/data/adsp/px4.config
+    adb push ./PX4/mainapp.config /root/mainapp.config
+    adb push ./PX4/px4 /root
+    adb push ./PX4/libpx4.so /usr/share/data/adsp
+    adb push ./PX4/libpx4muorb_skel.so /usr/share/data/adsp
+    adb push ./opencv3_20160222-1_armhf.deb /root
+    adb push ./camera.h /usr/include
+    adb push ./camera_parameters.h /usr/include
+    adb push ./mv0.8.deb /root
+    adb push ./snapdragon-flight-license.bin /usr/lib/
+    adb shell sync
+
+    adb shell
+    dpkg -i ./mv0.8.deb
+    dpkg -i ./opencv3_20160222-1_armhf.deb
+    ```
+
+4. Install the software on the platform
+    1. Make sure to switch to the station mode and install ROS for snapdragon flight: [link](https://github.com/ATLFlight/ATLFlightDocs/blob/master/SnapdragonROSInstallation.md)
+        - Also, install additional packages: `sudo apt-get install libeigen3-dev sip-dev libyaml-cpp-dev libboost-dev cmake ros-indigo-mavlink ros-indigo-tf ros-indigo-orocos-toolchain ros-indigo-angles ros-indigo-tf2 ros-indigo-tf2-ros`
+
+    2. Download our catkin workspace:
+        ```
+        cd
+        git clone https://github.com/cognifli/cognifli
+        cp ~/cognifli/contrib/environment/.vimrc ~/
+        cd cognifli
+        git checkout snapdragon
+
+        cd contrib
+        ./INSTALL.py
+        ```
+ 
+    3. Build everything:
+        ```
+        cd ~/cognifli
+        catkin_make
+        ```
+
+5. Run the software
+    - Motor control
+        - Make sure px4 is running (`./px4 mainapp.config` or through autorun)
+        - In a separate window:
+            ```
+            roslaunch mavros px4.launch fcu_url:="udp://:14550@192.168.1.1:14556"
+            ```
+            You should see something like this in the end of the output. If you don't, something is wrong with your ip or port:
+            ```
+            [ WARN] [5117.660738345]: TM: Clock skew detected (-4893.277222308 s). Hard syncing clocks.
+            [ INFO] [5118.277715740]: CON: Got HEARTBEAT, connected. FCU: PX4
+            [ INFO] [5118.294045062]: RC_CHANNELS message detected!
+            [ INFO] [5118.296279802]: IMU: High resolution IMU detected!
+            [ INFO] [5119.289135323]: VER: 1.1: Capabilities 0x00000000000024ef
+            [ INFO] [5119.290862667]: VER: 1.1: Flight software:     000000ff (7a23a043fbdfa880)
+            [ INFO] [5119.291693604]: VER: 1.1: Middleware software: 000000ff (7a23a043fbdfa880)
+            [ INFO] [5119.292522146]: VER: 1.1: OS software:         000000ff (0000000000000000)
+            [ INFO] [5119.293103396]: VER: 1.1: Board hardware:      00000001
+            [ INFO] [5119.294391833]: VER: 1.1: VID/PID: 0000:0000
+            [ INFO] [5119.295084593]: VER: 1.1: UID: 0000000100000002
+            [ INFO] [5119.295712510]: VER: 1.1: Capabilities 0x00000000000024ef
+            [ INFO] [5119.296223395]: VER: 1.1: Flight software:     000000ff (7a23a043fbdfa880)
+            [ INFO] [5119.296868239]: VER: 1.1: Middleware software: 000000ff (7a23a043fbdfa880)
+            [ INFO] [5119.297530688]: VER: 1.1: OS software:         000000ff (0000000000000000)
+            [ INFO] [5119.298221208]: VER: 1.1: Board hardware:      00000001
+            [ INFO] [5119.298689490]: VER: 1.1: VID/PID: 0000:0000
+            [ INFO] [5119.299195531]: VER: 1.1: UID: 0000000100000002
+            [ INFO] [5133.279507089]: WP: mission received
+            [ INFO] [5133.280639589]: WP: seems GCS requesting mission
+            [ INFO] [5133.280740682]: WP: sheduling pull after GCS is done
+            ```
+        - On a configured host, run `rostopic list`. You will see a lot of `/mavros/...` topics. For more information on Mavros, see [this](http://wiki.ros.org/mavros).
+
+        - Now run the demo code. (You need to have cognifli repo set up on host):
+            ```
+            rosrun snapflight snapflight
+            ```
+
+    - Localization:
+        In a separate windows (if you did not put it on autorun):
+        ```
+        imu_app -s 2
+        ```
+        And
+        ```
+        rosrun snap_ros_examples snap_vislam_node
+        ```
+        Then on a host run rviz and visualize tf!
+
+
+6. Tips and tricks!
+    - Make things like ./px4 or IMU driver to run on system startup:
+        ```
+        cd ~/cognifli/contrib
+        ./INSTALL.py --startup
+
+        vim ~/.root_startup.sh
+        ```
+        Add line:
+        ```
+        nohup /root/px4 /root/mainapp.config &>> $LOGFILE &
+        ```
+
+    - Wipe the platform:
+        Connect the drone via usb cable, execute on the host:
+        ```
+        cd firmware # This folder is in the 'snapdragon_setup'
+        chmod +x jflash.sh
+        sudo ./jflash.sh
+        ```
+
+7. Read more:
+    - Snap overview: [link](http://ardupilot.org/copter/docs/common-qualcomm-snapdragon-flight-kit.html)
+    - Setting PX4: [link](https://github.com/ATLFlight/ATLFlightDocs/blob/master/PX4.md)
+    - PX4 and ROS: [link](https://dev.px4.io/en/simulation/ros_interface.html)
+    - Cameras: [link](https://github.com/PX4/snap_cam)
+    - Localization: [link](https://github.com/ATLFlight/ros-examples)
 
 ***
 ### To Do:
