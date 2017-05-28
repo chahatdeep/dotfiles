@@ -244,7 +244,7 @@ sudo apt-get install ros-indigo-turtlebot ros-indigo-turtlebot-apps ros-indigo-t
 ```
 For kinetic:
 ```
-sudo apt-get install ros-kinectic-turtlebot ros-kinectic-turtlebot-apps ros-kinectic-turtlebot-interactions ros-kinectic-turtlebot-simulator ros-kinectic-kobuki-ftdi ros-kinectic-rocon-remocon ros-kinectic-rocon-qt-library ros-kinectic-ar-track-alvar-msgs
+sudo apt-get install ros-kinetic-turtlebot ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-interactions ros-kinetic-turtlebot-simulator ros-kinetic-kobuki-ftdi ros-kinetic-rocon-launch ros-kinetic-rocon-apps ros-kinetic-ar-track-alvar-msgs
 ```
 
 
