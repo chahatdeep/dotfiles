@@ -170,7 +170,7 @@ wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo 
 sudo apt-get update 
 ```
 Then do- ``sudo apt-get install ros-kinetic-desktop-full`` or ``sudo apt-get install ros-kinetic-desktop``.
-``
+*Note*: I highly recommend to install ros-$(ros_version)-desktop-full which is essentially the complete ROS package.
 
 3. Set up your keys
 ```
