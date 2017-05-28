@@ -154,6 +154,24 @@ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main
 ```
 - [Mirrors](http://wiki.ros.org/ROS/Installation/UbuntuMirrors)/[Source Debs](http://wiki.ros.org/DebianPackageSources) are also available.
 
+##### Note: If you are using Mint, ``$(lsb_release -sc)`` will output something like ``serena`` or some other name linked to your version of Linux Mint. So, to install ROS in Mint, try:
+- For Indigo:
+```
+sudo sh -c '. /etc/lsb-release && echo "deb http://mirror.umd.edu/packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list' 
+wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add - 
+sudo apt-get update 
+```
+Then do- ``sudo apt-get install ros-indigo-desktop-full`` or ``sudo apt-get install ros-indigo-desktop``.
+``
+- For Kinetic:
+```
+sudo sh -c '. /etc/lsb-release && echo "deb http://mirror.umd.edu/packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros-latest.list' 
+wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add - 
+sudo apt-get update 
+```
+Then do- ``sudo apt-get install ros-kinetic-desktop-full`` or ``sudo apt-get install ros-kinetic-desktop``.
+``
+
 3. Set up your keys
 ```
 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
