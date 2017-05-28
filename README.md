@@ -220,6 +220,8 @@ rosdep update
 - Adding ROS environment variables to your bash session:
 ```
 echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
+``` for kinetic: ``echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc``
+```
 source ~/.bashrc
 ```
 7. Getting rosinstall:
