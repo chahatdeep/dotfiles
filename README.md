@@ -230,13 +230,25 @@ source ~/.bashrc
 - It enables you to easily download many source trees for ROS packages with one command:
 ``sudo apt-get install python-rosinstall``
 
-8. See the next section for ROS turorials. Enjoy! 
+8. See the next section for ROS turorials. Enjoy!
 
 *All credits to ROS community and their [Installation Guidlines](http://wiki.ros.org/indigo/Installation/Ubuntu).
 
 *** 
 #### ROS Tutorials (for you!):
+*Important*: I highly recommend installing [Catkin Tools](https://catkin-tools.readthedocs.io/en/latest/installing.html) before moving forward!
 
+1. Turtle bot Installation (for simulation only), do:
+```
+sudo apt-get install ros-indigo-turtlebot ros-indigo-turtlebot-apps ros-indigo-turtlebot-interactions ros-indigo-turtlebot-simulator ros-indigo-kobuki-ftdi ros-indigo-rocon-remocon ros-indigo-rocon-qt-library ros-indigo-ar-track-alvar-msgs
+```
+For kinetic:
+```
+sudo apt-get install ros-kinectic-turtlebot ros-kinectic-turtlebot-apps ros-kinectic-turtlebot-interactions ros-kinectic-turtlebot-simulator ros-kinectic-kobuki-ftdi ros-kinectic-rocon-remocon ros-kinectic-rocon-qt-library ros-kinectic-ar-track-alvar-msgs
+```
+
+
+or simple follow the [reference](http://wiki.ros.org/turtlebot/Tutorials/indigo/Turtlebot%20Installation).
 
 
 
