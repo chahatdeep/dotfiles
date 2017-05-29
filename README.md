@@ -105,8 +105,53 @@ Desktop Integration Plugins
 ``sudo apt-get install mailnag-goa-plugin``
 
 [Reference](https://github.com/pulb/mailnag)
+***
 
+#### SLACK: ScudCloud – Unofficial open-source Slack client
+[Reference](http://tipsonubuntu.com/2016/07/15/install-slack-client-ubuntu-16-04/):
+- Please, first update your system with:
+```
+sudo apt-get update && sudo apt-get upgrade
+```
+*If not, ScudCloud will crash with some old components or will not be installed.*
 
+```
+sudo apt-add-repository -y ppa:rael-gc/scudcloud
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+sudo apt update
+sudo apt install scudcloud
+```
+- If you want spell checking, add the ``hunspell`` dictionary for your language and make sure dependencies are installed. For ``en-us``:
+```
+sudo apt-get install hunspell-en-us libqtwebkit-qupzillaplugins python3-hunspell
+```
+- If you want to use a Slack icon instead of ScudCloud (which is not possible to include in this package due to copyright), download any [28px Slack icon](https://www.google.com.br/search?q=slack+icon+transparent&tbm=isch&source=lnt&tbs=isz:ex,iszw:128,iszh:128) to your home folder saving as ``scudcloud.png`` and run:
+```
+sudo dpkg-divert --add --rename --divert /usr/share/pixmaps/scudcloud.png.real /usr/share/pixmaps/scudcloud.png
+sudo cp ~/scudcloud.png /usr/share/pixmaps/
+sudo chmod +r /usr/share/pixmaps/scudcloud.png
+sudo update-desktop-database
+```
+
+*Also, Aliasing ``scudCloud`` as ``slack`` will be handy!* Do:
+```
+echo "alias slack='scudcloud'" >> ~/.bashrc
+```
+
+- To remove Scudcloud:
+```
+sudo apt remove scudcloud && sudo apt autoremove
+```
+
+##### For Arch Linux:
+There is a [PKGBUILD](https://aur.archlinux.org/packages/scudcloud/) available on the Arch User Repository. You can install it using whichever AUR method you use. For instance, if you use cower:
+```
+cower -d scudcloud
+cd scudcloud
+makepkg -si
+```
+
+***
 #### Avant Window Navigator: (Mac-like Dock)
 ```
 sudo add-apt-repository ppa:nilarimogard/webupd8
@@ -235,7 +280,7 @@ source ~/.bashrc
 #### ROS Tutorials (for you!):
 *Important*: I highly recommend installing [Catkin Tools](https://catkin-tools.readthedocs.io/en/latest/installing.html) before moving forward!
 
-1. Turtle bot Installation (for simulation only), do:
+- Turtle bot Installation (for simulation only), do:
 ```
 sudo apt-get install ros-indigo-turtlebot ros-indigo-turtlebot-apps ros-indigo-turtlebot-interactions ros-indigo-turtlebot-simulator ros-indigo-kobuki-ftdi ros-indigo-rocon-remocon ros-indigo-rocon-qt-library ros-indigo-ar-track-alvar-msgs
 ```
@@ -243,10 +288,30 @@ For kinetic:
 ```
 sudo apt-get install ros-kinetic-turtlebot ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-interactions ros-kinetic-turtlebot-simulator ros-kinetic-kobuki-ftdi ros-kinetic-rocon-launch ros-kinetic-rocon-apps ros-kinetic-ar-track-alvar-msgs
 ```
-
-
 or simple follow the [reference](http://wiki.ros.org/turtlebot/Tutorials/indigo/Turtlebot%20Installation).
 
+1. Configuring ROS Environment: (Make sure you did Point 6 of last section)
+A good way to check is to ensure that environment variables like ``ROS_ROOT`` and ``ROS_PACKAGE_PATH`` are set:
+```
+printenv | grep ROS
+```
+You should get something like this:
+```
+ROS_ROOT=/opt/ros/kinetic/share/ros
+ROS_PACKAGE_PATH=/opt/ros/kinetic/share
+ROS_MASTER_URI=http://192.168.1.1:11311
+ROS_HOSTNAME=
+ROSLISP_PACKAGE_DIRECTORIES=
+ROS_DISTRO=kinetic
+ROS_IP=
+ROS_ETC_DIR=/opt/ros/kinetic/etc/ros
+```
+2. Creating ROS Workspace:
+Creating a ``ROS`` Workspace is simple.
+```
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+```
 
 
 
