@@ -84,31 +84,31 @@ This is a simple notification utility. It isn't absolutely required to get i3 wo
 
 #### Mailnag notifier:
 
-For debian based systems:
+##### For debian based systems:
 ```
 sudo add-apt-repository ppa:pulb/mailnag
 sudo apt-get update
 sudo apt-get install mailnag
 ```
-For Arch Linux:
+##### For Arch Linux:
 Either run ``yaourt -S mailnag`` or ``packer -S mailnag`` (as root) to install the package.
 Mailnag is available in the AUR repository.
 Desktop Integration Plugins
 
--Mailnag Unity Plugin:
+- Mailnag Unity Plugin:
 ``sudo apt-get install mailnag-unity-plugin``
 
--Mailnag GNOME Shell Extension:
+- Mailnag GNOME Shell Extension:
 ``sudo apt-get install gnome-shell-mailnag``
 
--Mailnag GNOME Online Accounts Plugin:
+- Mailnag GNOME Online Accounts Plugin:
 ``sudo apt-get install mailnag-goa-plugin``
 
 [Reference](https://github.com/pulb/mailnag)
 ***
 
 #### SLACK: ScudCloud – Unofficial open-source Slack client
-[Reference](http://tipsonubuntu.com/2016/07/15/install-slack-client-ubuntu-16-04/):
+[Reference](https://github.com/raelgc/scudcloud):
 - Please, first update your system with:
 ```
 sudo apt-get update && sudo apt-get upgrade
@@ -125,7 +125,7 @@ sudo apt install scudcloud
 ```
 sudo apt-get install hunspell-en-us libqtwebkit-qupzillaplugins python3-hunspell
 ```
-- If you want to use a Slack icon instead of ScudCloud (which is not possible to include in this package due to copyright), download any [28px Slack icon](https://www.google.com.br/search?q=slack+icon+transparent&tbm=isch&source=lnt&tbs=isz:ex,iszw:128,iszh:128) to your home folder saving as ``scudcloud.png`` and run:
+- If you want to use a Slack icon instead of ScudCloud (which is not possible to include in this package due to copyright), download any [128px Slack icon](https://www.google.com.br/search?q=slack+icon+transparent&tbm=isch&source=lnt&tbs=isz:ex,iszw:128,iszh:128) to your home folder saving as ``scudcloud.png`` and run:
 ```
 sudo dpkg-divert --add --rename --divert /usr/share/pixmaps/scudcloud.png.real /usr/share/pixmaps/scudcloud.png
 sudo cp ~/scudcloud.png /usr/share/pixmaps/
