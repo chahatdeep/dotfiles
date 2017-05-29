@@ -91,9 +91,8 @@ sudo apt-get update
 sudo apt-get install mailnag
 ```
 ##### For Arch Linux:
-Either run ``yaourt -S mailnag`` or ``packer -S mailnag`` (as root) to install the package.
-Mailnag is available in the AUR repository.
-Desktop Integration Plugins
+Either run ``yaourt -S mailnag`` or ``packer -S mailnag`` (as root) to install the package. Mailnag is available in the AUR repository.
+Desktop Integration Plugins:
 
 - Mailnag Unity Plugin:
 ``sudo apt-get install mailnag-unity-plugin``
@@ -137,6 +136,8 @@ sudo update-desktop-database
 ```
 echo "alias slack='scudcloud'" >> ~/.bashrc
 ```
+
+- For ``scudcloud`` config files, copy [``scudcloud_qt5.cfg``](https://github.com/chahatdeep/dotfiles/tree/master/.config/scudcloud) to ``~/.config/scudcloud/`` and you'll be good.
 
 - To remove Scudcloud:
 ```
