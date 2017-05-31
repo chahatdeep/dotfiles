@@ -434,7 +434,7 @@ cd ~/catkin_ws/src
         ```
         e.g. ``sudo service network-manager stop``
         
-        [Reference 1](https://ubuntuforums.org/showthread.php?t=1796412)
+        [Reference 1: Stop ``network-manager`` service](https://ubuntuforums.org/showthread.php?t=1796412)
         
         [Reference 2: Connect to Wifi Network through CLI](https://unix.stackexchange.com/questions/92799/connecting-to-wifi-network-through-command-line)
         
