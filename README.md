@@ -366,7 +366,7 @@ cd ~/catkin_ws/src
         <img src="https://images-na.ssl-images-amazon.com/images/I/811PyLh3cfL._SL1500_.jpg" width="400">
 
     2. **Connect via SSH**:
-        - Connect to the drone's wi-fi network (Atlanticus...) and then:
+        - Connect to the drone's wi-fi network ``Atlanticus_XXXXX``. To check your Snapdragon's Wifi-ssid and passphrase, do ``vim /etc/hostapd.conf``. Once you are connected to the Snapdragon's AP network, do:
             ``` 
             ssh linaro@192.168.1.1
 
