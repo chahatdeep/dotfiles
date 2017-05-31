@@ -322,7 +322,7 @@ cd ~/catkin_ws/src
 ### Snapdragon Flight:
 #### For this manual the host operating system is assumed to be Ubuntu 16.04
 
-1. Set up the host platform:
+1. **Set up the host platform**:
     1. [Install ROS](http://wiki.ros.org/kinetic/Installation/Ubuntu)
     2. Add the following lines to your `~/.bashrc`:
 
@@ -340,7 +340,7 @@ cd ~/catkin_ws/src
         ```
         sudo apt-get install android-tools-adb android-tools-fastboot
         ```
-2. Configure the drone:
+2. **Configure the drone:**
     1. **Make sure ADB works: connect your platform with a micro usb cable and type in console**:
         ```
         adb devices
@@ -447,7 +447,7 @@ cd ~/catkin_ws/src
        
         **NOTE!** For some reason ROS refuses to properly communicate with host through the station mode, use AP instead! Station mode is useful if you need Internet access on the platform.
 
-3. Move some files to the platform. Go to the 'snapdragon_setup' folder, then execute (with platform connected via usb):
+3. **Move some files to the platform. Go to the 'snapdragon_setup' folder, then execute (with platform connected via usb):**
     ```
     adb push ./PX4/px4.config /usr/share/data/adsp/px4.config
     adb push ./PX4/mainapp.config /root/mainapp.config
