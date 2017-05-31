@@ -44,7 +44,7 @@ Or simply try one of these:
 1. Adapta:
 ``` 
 sudo apt-add-repository ppa:tista/adapta -y
-sudo apt-get update ``
+sudo apt-get update
 sudo apt-get install adapta-gtk-theme 
 ```
 
@@ -396,28 +396,25 @@ cd ~/catkin_ws/src
         export ROS_MASTER_URI=http://$ROS_HOSTNAME:11311
         ```
     4. Configure the Wi-Fi:
-        - Configure the station mode by editing the `/etc/wpa_supplicant/wpa_supplicant.conf`:
-          Configure one of the 'network' sections (make sure only one 'network' section is uncommented):
+        - Configure the station mode by editing the ``/etc/wpa_supplicant/wpa_supplicant.conf ``:
+          Configure one of the ``network`` sections (make sure only one ``network`` section is uncommented):`
             ```
             network={
                      ssid="Land of Ooo"
                      proto=RSN
-                     key_mgmt=WPA-PSK
-                     pairwise=CCMP TKIP
-                     group=CCMP TKIP
-                     psk="mathematical"
-            } 
+                     key_mgmt=WPA-PSKa
             ```
-            This configuration is for the Land of Ooo router. For different networks edit accordingly.
+          This configuration is for the Land of Ooo router. For different networks edit accordingly.
         
-        - You can change SSID for the access point mode in ```/etc/hostapd.conf```
+        - You can change SSID for the access point mode in ``/etc/hostapd.conf``
 
     5. Learn how to switch between Wi-Fi modes:
-        Access point (by default):
+        - Access point (by default; Used for connecting directly to Ground Station Server; **No internet Connection**):
         ```
         /usr/local/qr-linux/wificonfig.sh -s softap
         ```
-        Station mode (connect to router):
+
+        - Station mode (connect to router):
         ```
         /usr/local/qr-linux/wificonfig.sh -s station
         ```
@@ -425,7 +422,27 @@ cd ~/catkin_ws/src
         ```
         reboot
         ```
-
+        ** IMPORTANT **: After you are connected to the internet, ``ping 8.8.8.8``. If for some reason, you are unable to reach the www server, try the following:
+        - First, try connecting to a *no-key* wifi server. Create a hotspot from you Mobile device, say: ``BlackTrojan`` ($SSID). Now,
+        ```
+        sudo iwconfig wlan0 essid $SSID # it sets the essid properly now
+        sudo dhclient -v wlan0
+        ```
+        Now, You should be connected to the internet. Try ``ping 8.8.8.8``. Voila! It worked. *Note: Make sure that you have given access to iwconfig for the network connections. Inbuilt CLI applications/ services like ``network-manager`` may interfere with your network environment. To stop that particular service, do:*
+        ```
+        sudo service <service_name> stop
+        ```
+        e.g. ``sudo service network-manager stop``
+        [Reference 1](https://ubuntuforums.org/showthread.php?t=1796412)
+        [Reference 2: Connect to Wifi Network through CLI](https://unix.stackexchange.com/questions/92799/connecting-to-wifi-network-through-command-line)
+        [Reference 3: Another Wifi Connection using CLI](https://cboard.cprogramming.com/networking-device-communication/118431-connect-wireless-network-via-linux-command-line.html)
+        [Reference 4: Installing an easy Network Interface in Linux](https://wiki.debian.org/WiFi/HowToUse)
+        [Reference 5: ``netctl`` interface; Use ``wifi-menu``](https://wiki.archlinux.org/index.php/netctl)
+        [Reference 6: Install necessary applications (like ``dialog`` and ``wpa_supplicant``) for ARM](https://github.com/chahatdeep/dotfiles/blob/master/app_list.sh)
+        [Reference 7: Using ``nmcli``](https://askubuntu.com/questions/461825/connect-to-wifi-from-command-line)
+        
+       - If ping works fine, follow [Reference 2](https://unix.stackexchange.com/questions/92799/connecting-to-wifi-network-through-command-line) in order to connect to a WEP/WPA key protected Wifi network.
+       
         **NOTE!** For some reason ROS refuses to properly communicate with host through the station mode, use AP instead! Station mode is useful if you need Internet access on the platform.
 
 3. Move some files to the platform. Go to the 'snapdragon_setup' folder, then execute (with platform connected via usb):
