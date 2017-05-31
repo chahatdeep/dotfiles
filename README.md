@@ -435,7 +435,7 @@ cd ~/catkin_ws/src
         ip link show wlan0
         wlan0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN mode DEFAULT group default qlen 1000 link/ether 00:03:7f:17:93:43 brd ff:ff:ff:ff:ff:ff
         ```
-        If you get ``DOWN`` in ``wlan0: <NO_CARRIER,BROADCAST,MULTICAST,DOWN>`` then you need to turn on your wireless network. Do:
+        If you get ``DOWN`` in ``wlan0: <NO_CARRIER,BROADCAST,MULTICAST,DOWN>`` then you need to turn on your wireless network. Don't worry, the ``DOWN`` in ``pfifo_fast state DOWN`` doesn't matter. To turn on the wireless device, do:
         
         ```
         sudo ip link set wlan0 up
