@@ -430,7 +430,21 @@ cd ~/catkin_ws/src
         reboot
         ```
         **IMPORTANT**: After you are connected to the internet, ``ping 8.8.8.8``. If for some reason, you are unable to reach the www server, try the following:
-        - First, try connecting to a *no-key* wifi server. Create a hotspot from you Mobile device, say: ``BlackTrojan`` ($SSID). Now,
+        - Check if your ``wlan0`` is on/off. Do:
+        ```
+        ip link show wlan0
+        wlan0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN mode DEFAULT group default qlen 1000
+    link/ether 00:03:7f:17:93:43 brd ff:ff:ff:ff:ff:ff
+        ```
+        If you get ``DOWN`` in ``wlan0: <NO_CARRIER,BROADCAST,MULTICAST,DOWN>`` then you need to turn on your wireless network. Do:
+        
+        ```
+        sudo ip link set wlan0 up
+        ```
+        and check ``ip link show wlan0`` again.
+        *Note: The name of your wireless device is generally ``wlan0``. It can be anything else like: ``wlp0s3``. Check ``iwconfig`` for the network name.*
+        
+        - Try connecting to a *no-key* wifi server. Create a hotspot from you Mobile device, say: ``BlackTrojan`` ($SSID). Now,
         ```
         sudo iwconfig wlan0 essid $SSID # it sets the essid properly now
         sudo dhclient -v wlan0
