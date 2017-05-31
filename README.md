@@ -341,7 +341,7 @@ cd ~/catkin_ws/src
         sudo apt-get install android-tools-adb android-tools-fastboot
         ```
 2. Configure the drone:
-    1. Make sure ADB works: connect your platform with a micro usb cable and type in console:
+    1. **Make sure ADB works: connect your platform with a micro usb cable and type in console**:
         ```
         adb devices
         ```
@@ -358,7 +358,7 @@ cd ~/catkin_ws/src
 
         Note: **DO NOT** use USB 3.0 cable (it does not work)! Use a micro usb one instead. If you see an error message 'Unable to mount Android' - that is OK.
 
-    2. Connect via SSH:
+    2. **Connect via SSH**:
         - Connect to the drone's wi-fi network (Atlanticus...) and then:
             ``` 
             ssh linaro@192.168.1.1
@@ -384,7 +384,7 @@ cd ~/catkin_ws/src
             ```
             su
             ```
-    3. Add the following lines to your `/root/.bashrc`:
+    3. **Add the following lines to your ``/root/.bashrc``**:
         ```
         export HOME=/root
         cd $HOME
@@ -395,7 +395,7 @@ cd ~/catkin_ws/src
         export ROS_HOSTNAME=$ROS_IP
         export ROS_MASTER_URI=http://$ROS_HOSTNAME:11311
         ```
-    4. Configure the Wi-Fi:
+    4. **Configure the Wi-Fi**:
         - Configure the station mode by editing the ``/etc/wpa_supplicant/wpa_supplicant.conf ``:
           Configure one of the ``network`` sections (make sure only one ``network`` section is uncommented):`
             ```
@@ -408,7 +408,7 @@ cd ~/catkin_ws/src
         
         - You can change SSID for the access point mode in ``/etc/hostapd.conf``
 
-    5. Learn how to switch between Wi-Fi modes:
+    5. **Learn how to switch between Wi-Fi modes**:
         - Access point (by default; Used for connecting directly to Ground Station Server; **No internet Connection**):
         ```
         /usr/local/qr-linux/wificonfig.sh -s softap
@@ -422,7 +422,7 @@ cd ~/catkin_ws/src
         ```
         reboot
         ```
-        ** IMPORTANT **: After you are connected to the internet, ``ping 8.8.8.8``. If for some reason, you are unable to reach the www server, try the following:
+        **IMPORTANT**: After you are connected to the internet, ``ping 8.8.8.8``. If for some reason, you are unable to reach the www server, try the following:
         - First, try connecting to a *no-key* wifi server. Create a hotspot from you Mobile device, say: ``BlackTrojan`` ($SSID). Now,
         ```
         sudo iwconfig wlan0 essid $SSID # it sets the essid properly now
@@ -466,7 +466,7 @@ cd ~/catkin_ws/src
     dpkg -i ./opencv3_20160222-1_armhf.deb
     ```
 
-4. Install the software on the platform
+4. **Install the software on the platform**
     1. Make sure to switch to the station mode and install ROS for snapdragon flight: [link](https://github.com/ATLFlight/ATLFlightDocs/blob/master/SnapdragonROSInstallation.md)
         - Also, install additional packages: `sudo apt-get install libeigen3-dev sip-dev libyaml-cpp-dev libboost-dev cmake ros-indigo-mavlink ros-indigo-tf ros-indigo-orocos-toolchain ros-indigo-angles ros-indigo-tf2 ros-indigo-tf2-ros`
 
@@ -488,7 +488,7 @@ cd ~/catkin_ws/src
         catkin_make
         ```
 
-5. Run the software
+5. **Run the software**
     - Motor control
         - Make sure px4 is running (`./px4 mainapp.config` or through autorun)
         - In a separate window:
@@ -538,7 +538,7 @@ cd ~/catkin_ws/src
         Then on a host run rviz and visualize tf!
 
 
-6. Tips and tricks!
+6. **Tips and tricks!**
     - Make things like ./px4 or IMU driver to run on system startup:
         ```
         cd ~/cognifli/contrib
@@ -559,7 +559,7 @@ cd ~/catkin_ws/src
         sudo ./jflash.sh
         ```
 
-7. Read more:
+7. **Read more:**
     - Snap overview: [link](http://ardupilot.org/copter/docs/common-qualcomm-snapdragon-flight-kit.html)
     - Setting PX4: [link](https://github.com/ATLFlight/ATLFlightDocs/blob/master/PX4.md)
     - PX4 and ROS: [link](https://dev.px4.io/en/simulation/ros_interface.html)
