@@ -434,19 +434,14 @@ cd ~/catkin_ws/src
         ```
         e.g. ``sudo service network-manager stop``
         
-        [Reference 1: Stop ``network-manager`` service](https://ubuntuforums.org/showthread.php?t=1796412)
-        
-        [Reference 2: Connect to Wifi Network through CLI](https://unix.stackexchange.com/questions/92799/connecting-to-wifi-network-through-command-line)
-        
-        [Reference 3: Another Wifi Connection using CLI](https://cboard.cprogramming.com/networking-device-communication/118431-connect-wireless-network-via-linux-command-line.html)
-        
-        [Reference 4: Installing an easy Network Interface in Linux](https://wiki.debian.org/WiFi/HowToUse)
-        
-        [Reference 5: ``netctl`` interface; Use ``wifi-menu``](https://wiki.archlinux.org/index.php/netctl)
-        
-        [Reference 6: Install necessary applications (like ``dialog`` and ``wpa_supplicant``) for ARM](https://github.com/chahatdeep/dotfiles/blob/master/app_list.sh)
-        
-        [Reference 7: Using ``nmcli``](https://askubuntu.com/questions/461825/connect-to-wifi-from-command-line)
+       
+       1. [Reference 1: Stop ``network-manager`` service](https://ubuntuforums.org/showthread.php?t=1796412)
+       2. [Reference 2: Connect to Wifi Network through CLI](https://unix.stackexchange.com/questions/92799/connecting-to-wifi-network-through-command-line)
+       3. [Reference 3: Another Wifi Connection using CLI](https://cboard.cprogramming.com/networking-device-communication/118431-connect-wireless-network-via-linux-command-line.html)
+       4. [Reference 4: Installing an easy Network Interface in Linux](https://wiki.debian.org/WiFi/HowToUse)
+       5. [Reference 5: ``netctl`` interface; Use ``wifi-menu``](https://wiki.archlinux.org/index.php/netctl)
+       6. [Reference 6: Install necessary applications (like ``dialog`` and ``wpa_supplicant``) for ARM](https://github.com/chahatdeep/dotfiles/blob/master/app_list.sh)
+       7. [Reference 7: Using ``nmcli``](https://askubuntu.com/questions/461825/connect-to-wifi-from-command-line)
         
        - If ping works fine, follow [Reference 2](https://unix.stackexchange.com/questions/92799/connecting-to-wifi-network-through-command-line) in order to connect to a WEP/WPA key protected Wifi network.
        
