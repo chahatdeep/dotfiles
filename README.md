@@ -360,6 +360,7 @@ cd ~/catkin_ws/src
         - 10 pin USB 3.0 (Don't use)
         
         <img src="https://images-na.ssl-images-amazon.com/images/I/41ApTPgD9-L._SL500_AC_SS350_.jpg" width="400">
+        
         - Use Standard Type A to Micro B
         
         <img src="https://images-na.ssl-images-amazon.com/images/I/811PyLh3cfL._SL1500_.jpg" width="400">
