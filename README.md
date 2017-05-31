@@ -433,8 +433,7 @@ cd ~/catkin_ws/src
         - Check if your ``wlan0`` is on/off. Do:
         ```
         ip link show wlan0
-        wlan0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN mode DEFAULT group default qlen 1000
-    link/ether 00:03:7f:17:93:43 brd ff:ff:ff:ff:ff:ff
+        wlan0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN mode DEFAULT group default qlen 1000 link/ether 00:03:7f:17:93:43 brd ff:ff:ff:ff:ff:ff
         ```
         If you get ``DOWN`` in ``wlan0: <NO_CARRIER,BROADCAST,MULTICAST,DOWN>`` then you need to turn on your wireless network. Do:
         
