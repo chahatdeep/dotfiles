@@ -357,8 +357,9 @@ cd ~/catkin_ws/src
         Now, in order to connect to platform type ```adb shell```
 
         Note: **DO NOT** use USB 3.0 (10 pin) cable (it does not work)! Use a **standard type A to micro B** usb cable one instead. If you see an error message 'Unable to mount Android' - that is OK.
-        ![10 pin USB 3.0](https://images-na.ssl-images-amazon.com/images/I/41ApTPgD9-L._SL500_AC_SS350_.jpg | width=100)
-        ![Use Standard Type A to Micro B](https://images-na.ssl-images-amazon.com/images/I/811PyLh3cfL._SL1500_.jpg | width=100)
+        ![10 pin USB 3.0](https://images-na.ssl-images-amazon.com/images/I/41ApTPgD9-L._SL500_AC_SS350_.jpg)
+        <img src="https://images-na.ssl-images-amazon.com/images/I/41ApTPgD9-L._SL500_AC_SS350_.jpg" width="48">
+        ![Use Standard Type A to Micro B](https://images-na.ssl-images-amazon.com/images/I/811PyLh3cfL._SL1500_.jpg)
 
     2. **Connect via SSH**:
         - Connect to the drone's wi-fi network (Atlanticus...) and then:
