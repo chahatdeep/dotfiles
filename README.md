@@ -293,7 +293,7 @@ For kinetic:
 ```
 sudo apt-get install ros-kinetic-turtlebot ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-interactions ros-kinetic-turtlebot-simulator ros-kinetic-kobuki-ftdi ros-kinetic-rocon-launch ros-kinetic-rocon-apps ros-kinetic-ar-track-alvar-msgs
 ```
-or simple follow the [reference](http://wiki.ros.org/turtlebot/Tutorials/indigo/Turtlebot%20Installation).
+or simply follow the [reference](http://wiki.ros.org/turtlebot/Tutorials/indigo/Turtlebot%20Installation).
 
 1. Configuring ROS Environment: (Make sure you did Point 6 of last section)
 A good way to check is to ensure that environment variables like ``ROS_ROOT`` and ``ROS_PACKAGE_PATH`` are set:
@@ -311,6 +311,11 @@ ROS_DISTRO=kinetic
 ROS_IP=
 ROS_ETC_DIR=/opt/ros/kinetic/etc/ros
 ```
+If you don't, restart the ``terminal`` or open a new ``terminal`` window. If it still doesn't work, do:
+```
+echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
+```
+
 2. Creating ROS Workspace:
 Creating a ``ROS`` Workspace is simple.
 ```
