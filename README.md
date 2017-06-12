@@ -138,6 +138,8 @@ sudo make install
 You should be good to go! Enjoy your ``emacs`` experience.
 
 [Reference](http://ergoemacs.org/emacs/building_emacs_on_linux.html)
+***
+
 
 #### SLACK: ScudCloud – Unofficial open-source Slack client
 [Reference](https://github.com/raelgc/scudcloud):
