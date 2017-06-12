@@ -110,6 +110,35 @@ Desktop Integration Plugins:
 [Reference](https://github.com/pulb/mailnag)
 ***
 
+#### Emacs setup:
+After copying the ``.emacs.d`` folder and ``.emacs`` config file to ``~/``, follow the following steps:
+
+```
+sudo apt-get install emacs24
+sudo apt-get install build-essential
+```
+- Get all dependencies of a previous emacs version:
+```
+sudo apt-get build-dep emacs24
+```
+Download emacs24.4 source code from [here](http://ftp.gnu.org/gnu/emacs/), then cd to the emacs source directory or do
+[download emacs24.4 directly](http://ftp.gnu.org/gnu/emacs/emacs-24.4.tar.xz).
+
+- Compile Emacs:
+```
+cd ‹source_dir_name›
+./configure
+make
+```
+
+- Optional. This basically copy the binary to /usr/local/bin
+```
+sudo make install
+```
+You should be good to go! Enjoy your ``emacs`` experience.
+
+[Reference](http://ergoemacs.org/emacs/building_emacs_on_linux.html)
+
 #### SLACK: ScudCloud – Unofficial open-source Slack client
 [Reference](https://github.com/raelgc/scudcloud):
 - Please, first update your system with:
