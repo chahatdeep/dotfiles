@@ -10,6 +10,8 @@
 #
 # ---<<<IF YOU GET ERROR>>>---:
 #
+# NOTE: First check is the file i3status.conf is in the right location. Check the path below! (i3status -c ~/.i3/.i3status.conf)
+#
 # in 'i3bar', make sure to edit ~/.i3status.conf file. It contains 
 # wlan and eth entry names as your defualt ethernet and wireless modules,
 # say 'enp2s0' and 'wlp2s0.
