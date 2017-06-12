@@ -159,7 +159,6 @@ You should be good to go! Enjoy your ``emacs`` experience.
 
 
 #### SLACK: ScudCloud – Unofficial open-source Slack client
-[Reference](https://github.com/raelgc/scudcloud):
 - Please, first update your system with:
 ```
 sudo apt-get update && sudo apt-get upgrade
@@ -195,6 +194,8 @@ echo "alias slack='scudcloud'" >> ~/.bashrc
 ```
 sudo apt remove scudcloud && sudo apt autoremove
 ```
+
+[Reference](https://github.com/raelgc/scudcloud)
 
 ##### For Arch Linux:
 There is a [PKGBUILD](https://aur.archlinux.org/packages/scudcloud/) available on the Arch User Repository. You can install it using whichever AUR method you use. For instance, if you use cower:
