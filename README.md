@@ -21,6 +21,7 @@
 
 ### MAY CONTAIN BIOHAZARDS, VIRUSES, BUGS AND BLACK HOLES!
 
+### [Linux Cookbook](http://upstart.ubuntu.com/cookbook/#disabling-a-job-from-automatically-starting):
 
 ### Installation Tweaks:
 #### MATLAB:
