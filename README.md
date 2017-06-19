@@ -23,6 +23,9 @@
 
 #### [Linux Cookbook and best practises](http://upstart.ubuntu.com/cookbook/#disabling-a-job-from-automatically-starting):
 
+### Franz (The all-in-one Messenger):
+Download [Franz](http://meetfranz.com/), extract and you are good to go!
+
 ### Installation Tweaks:
 #### MATLAB:
 Before installing any MATLAB toolbox on an already installed MATLAB, do:
