@@ -18,6 +18,10 @@
  ░▓▓▓▓▓▓▓▓▓▓
  ░░░░░░░░░░░
 ```
+## Table of contents:
+- [MATLAB](#MATLAB)
+- [Git Setup](#git-setup)
+- [Appearance](#appearance)
 
 ### MAY CONTAIN BIOHAZARDS, VIRUSES, BUGS AND BLACK HOLES!
 
