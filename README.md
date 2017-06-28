@@ -38,6 +38,25 @@ sudo chown -R $USER /usr/local/MATLAB
 
 ***
 
+#### Git setup:
+1. `` sudo apt-get install git-all ``
+2. Create a repository from your browser.
+3. Edit ``git config``: 
+```
+git config --global user.name "chahatdeep"
+git config --global user.email chahatdeepsingh@gmail.com
+git config --global core.editor emacs
+```
+*Check your configuration, do ``git config --list``*
+4. Git clone your repository, do `` git clone htttp://github.com/chahatdeep/<repo_name> ``
+5. cd <repo_name>
+6. `` git init ``
+7. Copy all the files you want to move to the repo.
+8. In the repo, do ``git add * ``
+9. `` git add LICENSE `` (Optional)
+10. `` git commit -m 'initial project version' ``
+11. `` git push ``
+
 
 
 #### Appearance:
