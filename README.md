@@ -29,6 +29,11 @@
 - [Emacs Setup](#emacs-setup)
 - [Slack Setup](#slack)
 - [Mac-like-Doc](#avant-window-navigator)
+- [Git GUI Setup](git-gui-application-for-linux)
+- [Handy Stuff](#handy-stuff)
+- [Everything about ROS](#everything-about-ros)
+- [Snapdragon Flight](#snapdragon-flight)
+- [To Do](#to-do)
 
 ### MAY CONTAIN BIOHAZARDS, VIRUSES, BUGS AND BLACK HOLES!
 
