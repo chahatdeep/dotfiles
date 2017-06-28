@@ -19,7 +19,7 @@
  ░░░░░░░░░░░
 ```
 ## Table of contents:
-- [MATLAB](#MATLAB)
+- [MATLAB](#matlab)
 - [Git Setup](#git-setup)
 - [Appearance](#appearance)
 
