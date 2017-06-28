@@ -19,7 +19,8 @@
  ░░░░░░░░░░░
 ```
 ## Table of contents:
-- [MATLAB](#matlab)
+- [LinuX Cookbook](#linux-cookbook-and-best-practises)
+-- [MATLAB](#matlab)
 - [Git Setup](#git-setup)
 - [Appearance](#appearance)
 
@@ -27,8 +28,8 @@
 
 #### [Linux Cookbook and best practises](http://upstart.ubuntu.com/cookbook/#disabling-a-job-from-automatically-starting):
 
-### Franz (The all-in-one Messenger):
-Download [Franz](http://meetfranz.com/), extract and you are good to go!
+### Franz:
+Download [Franz](http://meetfranz.com/), the all-in-one messenger, extract and you are good to go!
 
 ### Installation Tweaks:
 #### MATLAB:
