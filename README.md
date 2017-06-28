@@ -20,9 +20,15 @@
 ```
 ## Table of contents:
 - [LinuX Cookbook](#linux-cookbook-and-best-practises)
--- [MATLAB](#matlab)
+- [MATLAB](#matlab)
 - [Git Setup](#git-setup)
 - [Appearance](#appearance)
+- [Network Manager Applet](#nm-applet)
+- [Mailnag](#mailnag-notifier)
+- [Google Chrome Setup](#google-chrome)
+- [Emacs Setup](#emacs-setup)
+- [Slack Setup](#slack)
+- [Mac-like-Doc](#avant-window-navigator)
 
 ### MAY CONTAIN BIOHAZARDS, VIRUSES, BUGS AND BLACK HOLES!
 
@@ -108,7 +114,7 @@ sudo apt install arc-theme
 and set the desired theme using ``lxapperance`` from the terminal.
 ***
 
-#### For Network Manager Applet, install ``nm-applet``:
+#### nm-applet :
 ```
 sudo apt-get install nm-applet
 ```
@@ -193,7 +199,7 @@ You should be good to go! Enjoy your ``emacs`` experience.
 ***
 
 
-#### SLACK: ScudCloud – Unofficial open-source Slack client
+#### Slack:
 - Please, first update your system with:
 ```
 sudo apt-get update && sudo apt-get upgrade
