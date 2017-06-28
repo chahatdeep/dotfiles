@@ -114,7 +114,7 @@ sudo apt install arc-theme
 and set the desired theme using ``lxapperance`` from the terminal.
 ***
 
-#### nm-applet :
+#### nm-applet:
 ```
 sudo apt-get install nm-applet
 ```
@@ -247,7 +247,7 @@ makepkg -si
 ```
 
 ***
-#### Avant Window Navigator: (Mac-like Dock)
+#### Avant Window Navigator:
 ```
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt update
