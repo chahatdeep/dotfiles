@@ -700,4 +700,3 @@ Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below
 > [Read about how to write a cool git readme file!](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 > [Create your chahatdeep.github.io (change the website name from the settings)](https://github.com/chahatdeep/editchahatdeep.github.io)
-
