@@ -64,7 +64,7 @@ git config --global core.editor emacs
 
 11. `` git push ``
 
-
+***
 
 #### Appearance:
 ``lxapperance`` will do it for you!
