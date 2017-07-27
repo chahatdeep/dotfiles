@@ -41,7 +41,7 @@
 #### [Linux Cookbook and best practises](http://upstart.ubuntu.com/cookbook/#disabling-a-job-from-automatically-starting):
 
 ### Troubleshooting:
-- If mouse works, but mouse pad is not working, the issue is mostly regarding to CUDA/nvidia drivers. Remove the `nvidia-375` driver or simply do: `sudo apt-get install nvidia-367`.
+- If mouse works, but touchpad is not working, the issue is mostly regarding to CUDA/nvidia drivers. Remove the `nvidia-375` driver or simply do: `sudo apt-get install nvidia-367`.
 
 ### Franz:
 Download [Franz](http://meetfranz.com/), the all-in-one messenger, extract and you are good to go!
