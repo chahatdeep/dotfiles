@@ -3,6 +3,8 @@
 version="$(wget -q -O - http://sourceforge.net/projects/opencvlibrary/files/opencv-unix | egrep -m1 -o '\"[0-9](\.[0-9]+)+' | cut -c2-)"
 echo "Installing OpenCV: " $version
 echo " in" $PWD
+echo "Tested only on Ubuntu-16.04 (MATE). It might not work with any other distro."
+read -p "Press <ENTER> to continue"
 mkdir OpenCV
 cd OpenCV
 echo "Removing any pre-installed ffmpeg and x264"
@@ -21,4 +23,4 @@ make -j2
 sudo checkinstall
 sudo sh -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'
 sudo ldconfig
-echo "OpenCV" $version "ready to be used"
+echo "OpenCV" $version "is ready to use."
