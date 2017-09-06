@@ -8,7 +8,7 @@
 
 3. Copy the Image into SD card. 
 Replace `sdX` to your SD card device name in your host machine.
-*NOTE: Recheck your SD Card partition. Do not enter any other HDD partition by mistake, else you'll lose the HDD data. Check `lsblk` to confirm your partition.*
+* **Note**: Recheck your SD Card partition. Do not enter any other HDD partition by mistake, else you'll lose the HDD data. Check `lsblk` to confirm your partition.*
 ```
 sudo dd if=ubuntu-16.04-mate-odroid-xu4-$version.img of=/dev/sdX bs=1M conv=fsync
 sync
@@ -33,7 +33,9 @@ password: odroid
 ```
 
 8. Download `opencv_install_odroid.sh` from `git`
+
 -or-
+
 Copy-Paste the following script to a new file named: `opencv_install_to_ubuntu_mate_16.04.sh`
 ```
 #!/bin/bash
