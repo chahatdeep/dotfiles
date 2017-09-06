@@ -1,0 +1,44 @@
+### Download Ubuntu-16.04 for XU4 from: `https://odroid.in/ubuntu_16.04lts/`
+
+1. Un-xz your image file: 
+`unxz ubuntu-16.04-mate-odroid-xu3-20160708.img.xz`
+
+2. Insert your micro-SD Card to your host PC. Make sure that it's more than 8GB. *Minimum 16GB is recommended.*
+*(The size of Ubuntu mate image is around 4GB and Opencv requires around 2.5GB)*
+
+3. Copy the Image into SD card. 
+Replace `sdX` to your SD card device name in your host machine.
+*NOTE: Recheck your SD Card partition. Do not enter any other HDD partition by mistake, else you'll lose the HDD data. Check `lsblk` to confirm your partition. *
+```
+sudo dd if=ubuntu-16.04-mate-odroid-xu4-$version.img of=/dev/sdX bs=1M conv=fsync
+sync
+```
+
+4. Install Gparted on your host and run
+(Resize `rootfs` partition as it is just 4GB in the image)
+```
+sudo apt-get install gparted
+sudo gparted
+```
+
+5. Select `/dev/sdX` on `gparted` and in the `rootfs`. Right-Click, resize and set max size of sdcard.
+
+6. Insert this SD Card on the Odroid XU4 and turn the power on.
+*Make sure the Odroid switch is pointing towards microSD (not eMMC). 
+
+7. Log-in with 
+```
+username: odroid
+password: odroid
+```
+
+8. Download and install `opencv_install_odroid.sh`
+```
+source opencv_install_to_ubuntu_mate_16.04.sh
+```
+
+9. Sample Test:
+```
+cd opcv-2.13.xx/samples/c
+./facedetect lena.jpg
+```
