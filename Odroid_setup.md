@@ -21,7 +21,7 @@ sudo apt-get install gparted
 sudo gparted
 ```
 
-5. Select `/dev/sdX` on `gparted` and in the `rootfs`. Right-Click, `Resize/Move` to maximum possible size.
+5. Select `/dev/sdX` on `gparted` and in the `rootfs`. Right-Click, `Resize/Move` to maximum possible size. **Leave a couple of GB spare (unallocated), if possible.**
 
 6. Insert this SD Card on the Odroid XU4 and turn the power on.
 *Make sure the Odroid switch is pointing towards microSD (not eMMC). 
