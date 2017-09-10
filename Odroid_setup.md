@@ -133,7 +133,8 @@ sudo apt-get install python-rosinstall
 ***
 
 ### Issues:
-#### Rviz-issue
+#### Rviz-issue ([Reference](http://indilib.org/forum/general/2402-solved-problem-with-libglesv2-so-2-on-odroid-xu4.html))
+
 - `odroid@odroid:~$ rviz`, you might face this issue:
 ```
 rviz: error while loading shared libraries: libGLESv2.so.2: cannot open shared object file: No such file or directory
@@ -142,5 +143,4 @@ It can be resolved by:
 ```
 sudo ln -s /usr/lib/arm-linux-gnueabihf/mesa-egl/libGLESv2.so.2 /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2
 ```
-[Reference](http://indilib.org/forum/general/2402-solved-problem-with-libglesv2-so-2-on-odroid-xu4.html)
 
