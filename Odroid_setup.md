@@ -128,12 +128,12 @@ echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 sudo apt-get install python-rosinstall
 ```
 
-**Note**: *If you are not able to open `rviz`, check the Rviz in the [issue](#1.rviz-issue) section
+**Note**: *If you are not able to open `rviz`, check the Rviz in the [issue](#rviz-issue) section
 
 ***
 
 ### Issues:
-#### 1.Rviz-issue
+#### Rviz-issue
 - `odroid@odroid:~$ rviz`, you might face this issue:
 ```
 rviz: error while loading shared libraries: libGLESv2.so.2: cannot open shared object file: No such file or directory
