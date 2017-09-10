@@ -128,7 +128,7 @@ echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 sudo apt-get install python-rosinstall
 ```
 
-**Note**: *If you are not able to open `rviz`, check the Rviz in the [issue](#rviz-issue) section
+**Note**: *If you are not able to open `rviz`, check the Rviz in the [issue](#1.-rviz-issue) section
 
 ***
 
