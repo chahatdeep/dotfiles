@@ -121,7 +121,6 @@ rosdep update
 - Adding ROS environment variables to your bash session:
 ```
 echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
 ```
 7. Getting rosinstall:
 - It enables you to easily download many source trees for ROS packages with one command:
