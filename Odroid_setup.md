@@ -81,9 +81,13 @@ source opencv_install_to_ubuntu_mate_16.04.sh
 cd opcv-2.13.xx/samples/c
 ./facedetect lena.jpg
 ```
+***
+### ROS Installation:
+
+***
 
 ### Issues:
-- `$ rviz`, you might face this issue:
+- `odroid@odroid:~$ rviz`, you might face this issue:
 ```
 rviz: error while loading shared libraries: libGLESv2.so.2: cannot open shared object file: No such file or directory
 ```
@@ -91,3 +95,5 @@ It can be resolved by:
 ```
 sudo ln -s /usr/lib/arm-linux-gnueabihf/mesa-egl/libGLESv2.so.2 /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2
 ```
+[Reference](http://indilib.org/forum/general/2402-solved-problem-with-libglesv2-so-2-on-odroid-xu4.html)
+
