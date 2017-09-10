@@ -133,7 +133,7 @@ sudo apt-get install python-rosinstall
 ***
 
 ### Issues:
-#### Rviz-issue
+#### 1. Rviz-issue
 - `odroid@odroid:~$ rviz`, you might face this issue:
 ```
 rviz: error while loading shared libraries: libGLESv2.so.2: cannot open shared object file: No such file or directory
