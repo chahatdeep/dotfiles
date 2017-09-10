@@ -83,10 +83,58 @@ cd opcv-2.13.xx/samples/c
 ```
 ***
 ### ROS Installation:
+#### Installing ROS Kinetic (Ubuntu 16.04): ([Reference](http://wiki.ros.org/kinectic/Installation/Ubuntu))
+1. Setup your sources.list 
+```
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+```
+
+2. Install the `ros-kinetic` package:
+```
+sudo sh -c '. /etc/lsb-release && echo "deb http://mirror.umd.edu/packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros-latest.list' 
+wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add - 
+sudo apt-get update 
+```
+Then do- 
+```sudo apt-get install ros-kinetic-desktop-full```
+or 
+```sudo apt-get install ros-kinetic-desktop```
+
+3. Set up your keys
+```
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+```
+
+4. Installation
+Make sure your packages are up to date:
+```
+sudo apt-get update
+```
+
+5. Initialize rosdep:
+```
+sudo rosdep init
+rosdep update
+```
+
+6. Environment setup:
+- Adding ROS environment variables to your bash session:
+```
+echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+7. Getting rosinstall:
+- It enables you to easily download many source trees for ROS packages with one command:
+```
+sudo apt-get install python-rosinstall
+```
+
+**Note**: *If you are not able to open `rviz`, check the Rviz in the [issue](#rviz-issue) section
 
 ***
 
 ### Issues:
+#### Rviz-issue
 - `odroid@odroid:~$ rviz`, you might face this issue:
 ```
 rviz: error while loading shared libraries: libGLESv2.so.2: cannot open shared object file: No such file or directory
