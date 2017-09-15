@@ -30,6 +30,7 @@
 - [Slack Setup](#slack)
 - [Mac-like-Doc](#avant-window-navigator)
 - [Git GUI Setup](git-gui-application-for-linux)
+- [Synergy Setup](https://www.brahma.world/synergy-stable-builds/)
 - [Troubleshooting](#troubleshooting)
 - [Handy Stuff](#handy-stuff)
 - [Everything about ROS](#everything-about-ros)
