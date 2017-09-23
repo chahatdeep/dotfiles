@@ -191,7 +191,7 @@ sudo apt-get build-dep emacs24
 ```
 - Give permission to `.emacs` and `.emacs` permission to the $USER:
 ```
-chown -hvR $USER /home/$USER
+sudo chown -hvR $USER /home/$USER
 ```
 
 Download emacs24.4 source code from [here](http://ftp.gnu.org/gnu/emacs/), then cd to the emacs source directory or do
