@@ -90,6 +90,9 @@ git config --global core.editor emacs
 ***
 
 #### Appearance:
+##### For Gnome-Terminal Solarized Color Schemes, follow [this](https://github.com/Anthony25/gnome-terminal-colors-solarizedv)
+
+
 ``lxapperance`` will do it for you!
 You also want QT, GTK 2.0, and GTK+ to look the same as your chosen theme.
 
