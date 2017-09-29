@@ -43,6 +43,7 @@
 #### [Linux Cookbook and best practises](http://upstart.ubuntu.com/cookbook/#disabling-a-job-from-automatically-starting):
 
 ### Troubleshooting:
+- [Installing nVidia 381 on ASUS ROG GL502V driver](https://github.com/chahatdeep/dotfiles/issues/1)
 - If mouse works, but touchpad is not working, the issue is mostly related to CUDA/nvidia drivers. Remove the `nvidia-375` driver or simply do: `sudo apt-get install nvidia-367`.
 
 ### Franz:
