@@ -717,10 +717,8 @@ cd ~/catkin_ws/src
 ***
 ### To Do:
 Add auto lock using ``xautolock`` and ``i3lock`` using the link given down below:
-> [i3wm: ``i3lock``, ``xautolock`` & Suspend to Disk](http://rabexc.org/posts/awesome-xautolock-battery)
-
-> Install [TWMN: A notifier for i3 like Tiling Window Manager](https://github.com/sboli/twmn)
-
-> [Read about how to write a cool git readme file!](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-
-> [Create your chahatdeep.github.io (change the website name 
+> [ ] [i3wm: ``i3lock``, ``xautolock`` & Suspend to Disk](http://rabexc.org/posts/awesome-xautolock-battery)
+> [ ] [Install i3-gaps to make your system modern](https://www.reddit.com/r/unixporn/comments/6ugv1m/i3void_linux_portable_rice_on_a_usb_stick_really/)
+> [ ] Install [TWMN: A notifier for i3 like Tiling Window Manager](https://github.com/sboli/twmn)
+> [ ] [Read about how to write a cool git readme file!](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+> [ ] [Create your chahatdeep.github.io (change the website name 
