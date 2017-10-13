@@ -1,24 +1,5 @@
-## All the dotfiles neccessary for my personalized Arch Linux.
-### WARNING: For your own sake, CHECK THE SCRIPTS before you use ANYTHING!
+# Awesome dotfiles [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
- ```
-       ██            ██     ████ ░██  ██                
-      ░██           ░██    ░██░   ░░ ░██                
-      ░██  ██████  ██████ ██████  ██ ░██  █████   ██████
-   ██████ ██░░░░██░░░██░ ░░░██░  ░██ ░██ ██░░░██ ██░░░░ 
-  ██░░░██░██   ░██  ░██    ░██   ░██ ░██░███████░░█████ 
-░██  ░██░██   ░██  ░██    ░██   ░██ ░██░██░░░░  ░░░░░██
-░░██████░░██████  ░░██    ░██   ░██  ██░░██████ ██████ 
- ░░░░░░  ░░░░░░     ░░    ░░    ░░░░░  ░░░░░░ ░░░░░░  
-
- 
-  ▓▓▓▓▓▓▓▓▓▓
- ░▓ about   ▓ Custom Linux Config Files
- ░▓ author  ▓ Chahat Deep Singh <chahatdeepsingh@gmail.com>
- ░▓ support ▓ archahat.wordpress.com
- ░▓▓▓▓▓▓▓▓▓▓
- ░░░░░░░░░░░
-```
 ## Table of contents:
 - [LinuX Cookbook](#linux-cookbook-and-best-practises)
 - [MATLAB](#matlab)
@@ -392,8 +373,10 @@ source ~/.bashrc
 
 7. Getting rosinstall:
 - It enables you to easily download many source trees for ROS packages with one command:
+
 ```shell-script
-sudo apt-get install python-rosinstall```
+sudo apt-get install python-rosinstall
+```
 
 8. See the next section for ROS turorials. Enjoy!
 
