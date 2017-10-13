@@ -125,7 +125,7 @@ sudo apt update
 sudo apt install vertex-theme  
 ```
 4. Arc: (Probably the best available)
-```
+```shell-script
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list"  
 sudo apt update  
 sudo apt install arc-theme  
