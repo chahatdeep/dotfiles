@@ -53,7 +53,7 @@ Download [Franz](http://meetfranz.com/), the all-in-one messenger, extract and y
 #### MATLAB:
 Before installing any MATLAB toolbox on an already installed MATLAB, do:
 
-```sh
+```bash
 sudo chmod -R ugo+rw /usr/local/MATLAB
 sudo chown -R $USER /usr/local/MATLAB
 ```
