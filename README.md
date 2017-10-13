@@ -44,7 +44,10 @@
 
 ### Troubleshooting:
 - [Installing nVidia 381 on ASUS ROG GL502V driver](https://github.com/chahatdeep/dotfiles/issues/1)
-- If mouse works, but touchpad is not working, the issue is mostly related to CUDA/nvidia drivers. Remove the `nvidia-375` driver or simply do: `sudo apt-get install nvidia-367`.
+- If mouse works, but touchpad is not working, the issue is mostly related to CUDA/nvidia drivers. Remove the `nvidia-375` driver or simply do: 
+```shell-script
+sudo apt-get install nvidia-367
+```
 
 ### Franz:
 Download [Franz](http://meetfranz.com/), the all-in-one messenger, extract and you are good to go!
@@ -53,7 +56,7 @@ Download [Franz](http://meetfranz.com/), the all-in-one messenger, extract and y
 #### MATLAB:
 Before installing any MATLAB toolbox on an already installed MATLAB, do:
 
-```bash
+```shell-script
 sudo chmod -R ugo+rw /usr/local/MATLAB
 sudo chown -R $USER /usr/local/MATLAB
 ```
@@ -65,7 +68,7 @@ sudo chown -R $USER /usr/local/MATLAB
 1. `` sudo apt-get install git-all ``
 2. Create a repository from your browser.
 3. Edit ``git config``: 
-```
+```shell-script
 git config --global user.name "chahatdeep"
 git config --global user.email chahatdeepsingh@gmail.com
 git config --global core.editor emacs
@@ -75,7 +78,8 @@ git config --global core.editor emacs
 
 5. cd <repo_name>
 
-6. `` git init ``
+6. ```shell-script
+git init ```
 
 7. Copy all the files you want to move to the repo.
 
@@ -92,7 +96,7 @@ git config --global core.editor emacs
 #### Appearance:
 ##### For Gnome-Terminal Solarized Color Schemes, follow [this](https://github.com/Anthony25/gnome-terminal-colors-solarizedv)
 - For Log-in HUD, do:
-```
+```shell-script
 sudo apt install screenfetch
 echo screenfetch >> ~/.bashrc
 ```
@@ -100,26 +104,26 @@ echo screenfetch >> ~/.bashrc
 ``lxapperance`` will do it for you!
 You also want QT, GTK 2.0, and GTK+ to look the same as your chosen theme.
 
-```
+```shell-script
 sudo apt-get install lxappearance gtk-chtheme qt4-qtconfig
 ```
 Now, open the apperance setting using ``lxapperance`` from the terminal. Check if you have any dark theme available! If not, try one of theme from this [link](http://www.devpy.me/10-of-the-best-linux-themes-compared/).
 Or simply try one of these:
 1. Adapta:
-``` 
+```shell-script
 sudo apt-add-repository ppa:tista/adapta -y
 sudo apt-get update
 sudo apt-get install adapta-gtk-theme 
 ```
 
 2. Numix:
-```
+```shell-script
 sudo add-apt-repository ppa:numix/ppa  
 sudo apt update  
 sudo apt install numix-gtk-theme 
 ```
 3. Vertex:
-```
+```shell-script
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/vertex-theme.list"  
 sudo apt update  
 sudo apt install vertex-theme  
@@ -134,7 +138,7 @@ and set the desired theme using ``lxapperance`` from the terminal.
 ***
 
 #### nm-applet:
-```
+```shell-script
 sudo apt-get install nm-applet
 ```
 and add: `` exec --no-startup-id nm-applet `` to your i3 config file. Now, open ``lxapperance`` from your console and tweak the window properties that suits best for you :)
@@ -149,7 +153,7 @@ This is a simple notification utility. It isn't absolutely required to get i3 wo
 #### Mailnag notifier:
 
 ##### For debian based systems:
-```
+```shell-script
 sudo add-apt-repository ppa:pulb/mailnag
 sudo apt-get update
 sudo apt-get install mailnag
@@ -172,15 +176,15 @@ Desktop Integration Plugins:
 
 #### Google Chrome:
 - Setup key with: 
-```
+```shell-script
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
 ```
 - Setup repository with: 
-```
+```shell-script
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 ```
 - Setup package with: 
-```
+```shell-script
 sudo apt-get update 
 sudo apt-get install google-chrome-stable
 ```
@@ -190,16 +194,16 @@ sudo apt-get install google-chrome-stable
 #### Emacs setup:
 After copying the ``.emacs.d`` folder and ``.emacs`` config file to ``~/``, follow the following steps:
 
-```
+```shell-script
 sudo apt-get install emacs24
 sudo apt-get install build-essential
 ```
 - Get all dependencies of a previous emacs version:
-```
+```shell-script
 sudo apt-get build-dep emacs24
 ```
 - Give permission to `.emacs` and `.emacs` permission to the $USER:
-```
+```shell-script
 sudo chown -hvR $USER /home/$USER
 ```
 
@@ -207,14 +211,14 @@ Download emacs24.4 source code from [here](http://ftp.gnu.org/gnu/emacs/), then 
 [download emacs24.4 directly](http://ftp.gnu.org/gnu/emacs/emacs-24.4.tar.xz).
 
 - Compile Emacs:
-```
+```shell-script
 cd ‹source_dir_name›
 ./configure
 make
 ```
 
 - Optional. This basically copy the binary to /usr/local/bin
-```
+```shell-script
 sudo make install
 ```
 You should be good to go! Enjoy your ``emacs`` experience.
@@ -225,38 +229,38 @@ You should be good to go! Enjoy your ``emacs`` experience.
 
 #### Slack:
 - Please, first update your system with:
-```
+```shell-script
 sudo apt-get update && sudo apt-get upgrade
 ```
 *If not, ScudCloud will crash with some old components or will not be installed.*
 
-```
+```shell-script
 sudo apt-add-repository -y ppa:rael-gc/scudcloud
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
 sudo apt update
 sudo apt install scudcloud
 ```
 - If you want spell checking, add the ``hunspell`` dictionary for your language and make sure dependencies are installed. For ``en-us``:
-```
+```shell-script
 sudo apt-get install hunspell-en-us libqtwebkit-qupzillaplugins python3-hunspell
 ```
 - If you want to use a Slack icon instead of ScudCloud (which is not possible to include in this package due to copyright), download any [128px Slack icon](https://www.google.com.br/search?q=slack+icon+transparent&tbm=isch&source=lnt&tbs=isz:ex,iszw:128,iszh:128) to your home folder saving as ``scudcloud.png`` and run:
-```
+```shell-script
 sudo dpkg-divert --add --rename --divert /usr/share/pixmaps/scudcloud.png.real /usr/share/pixmaps/scudcloud.png
 sudo cp ~/scudcloud.png /usr/share/pixmaps/
 sudo chmod +r /usr/share/pixmaps/scudcloud.png
 sudo update-desktop-database
-```
+```shell-script
 
 *Also, Aliasing ``scudCloud`` as ``slack`` will be handy!* Do:
-```
+```shell-script
 echo "alias slack='scudcloud'" >> ~/.bashrc
 ```
 
 - For ``scudcloud`` config files, copy [``scudcloud_qt5.cfg``](https://github.com/chahatdeep/dotfiles/tree/master/.config/scudcloud) to ``~/.config/scudcloud/`` and you'll be good.
 
 - To remove Scudcloud:
-```
+```shell-script
 sudo apt remove scudcloud && sudo apt autoremove
 ```
 
@@ -264,7 +268,7 @@ sudo apt remove scudcloud && sudo apt autoremove
 
 ##### For Arch Linux:
 There is a [PKGBUILD](https://aur.archlinux.org/packages/scudcloud/) available on the Arch User Repository. You can install it using whichever AUR method you use. For instance, if you use cower:
-```
+```shell-script
 cower -d scudcloud
 cd scudcloud
 makepkg -si
@@ -272,19 +276,19 @@ makepkg -si
 
 ***
 #### Avant Window Navigator:
-```
+```shell-script
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt update
 sudo apt install --install-recommends avant-window-navigator
 ```
 if Avant Window Navigator crashes the first time you run it, use the following command to restart gconfd-2:
-```
+```shell-script
 killall gconfd-2
 ```
 Then, use Synaptic Package Manager to install the AWN applets you want to use (simply search for "awn applet" and you should get a complete list of applets).
 
 Or, to install all the available applets (except the DockBarX AWN applet, which is not part of AWN), use the following command:
-```
+```shell-script
 sudo apt install --no-install-recommends awn-applets-all
 ```
 I used "--install-recommends" for the AWN package because on Linux Mint, recommended packages are not installed by default, and that would result in awn-settings package (among a few others) not being installed. For the awn-applets-all, I used "--no-install-recommends" to prevent it from installing Unity Control Center and other Unity / GNOME Flashback packages along with the AWN applets in Xubuntu, Ubuntu MATE, etc (this is not the case for Linux Mint).
@@ -293,7 +297,7 @@ Here is the reference [link](http://www.webupd8.org/2016/09/how-to-install-avant
 ***
 ### Git GUI Application for Linux:
 Apart from ``gitkraken``, ``rabbitvcs`` is an amazing app which comes with an integration of ``nautilus``. Add ppa:
-```
+```shell-script
 sudo add-apt-repository ppa:rabbitvcs/ppa
 sudo apt-get update
 sudo apt-get install rabbitvcs-nautilus rabbitvcs-cli
@@ -304,7 +308,7 @@ Note: If you are using ``nautilus3`` instead of ``nautilus``, do ``sudo apt-get 
 
 ### Handy-Stuff:
 - Checking your Ubuntu version:
-```
+```shell-script
 lsb_release -a
 ```
 ***
@@ -313,22 +317,21 @@ lsb_release -a
 1. Configure your Ubuntu repositories: Configure your Ubuntu repositories to allow "restricted," "universe," and "multiverse." Follow [this](https://help.ubuntu.com/community/Repositories/Ubuntu)
 
 2. Setup your sources.list 
-```
+```shell-script
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 ```
 - [Mirrors](http://wiki.ros.org/ROS/Installation/UbuntuMirrors)/[Source Debs](http://wiki.ros.org/DebianPackageSources) are also available.
 
 ##### Note: If you are using Mint, ``$(lsb_release -sc)`` will output something like ``serena`` or some other name linked to your version of Linux Mint. So, to install ROS in Mint, try:
 - For Indigo:
-```
+```shell-script
 sudo sh -c '. /etc/lsb-release && echo "deb http://mirror.umd.edu/packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list' 
 wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add - 
 sudo apt-get update 
 ```
 Then do- ``sudo apt-get install ros-indigo-desktop-full`` or ``sudo apt-get install ros-indigo-desktop``.
-``
 - For Kinetic:
-```
+```shell-script
 sudo sh -c '. /etc/lsb-release && echo "deb http://mirror.umd.edu/packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros-latest.list' 
 wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add - 
 sudo apt-get update 
@@ -337,36 +340,36 @@ Then do- ``sudo apt-get install ros-kinetic-desktop-full`` or ``sudo apt-get ins
 *Note*: I highly recommend to install ros-$(ros_version)-desktop-full which is essentially the complete ROS package.
 
 3. Set up your keys
-```
+```shell-script
 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
 ```
 
 4. Installation
 Make sure your packages are up to date:
-```
+```shell-script
 sudo apt-get update
 ```
 - If you are using Ubuntu Trusty 14.04.2 and experience dependency issues during the ROS installation, you may have to install some additional system dependencies. Do not install these packages if you are using 14.04, it will destroy your X server:
-```
+```shell-script
 sudo apt-get install xserver-xorg-dev-lts-utopic mesa-common-dev-lts-utopic libxatracker-dev-lts-utopic libopenvg1-mesa-dev-lts-utopic libgles2-mesa-dev-lts-utopic libgles1-mesa-dev-lts-utopic libgl1-mesa-dev-lts-utopic libgbm-dev-lts-utopic libegl1-mesa-dev-lts-utopic
 ```
 - Do not install the above packages if you are using 14.04, it will destroy your X server
 - Alternatively, try installing just this to fix dependency issues:
-```
+```shell-script
 sudo apt-get install libgl1-mesa-dev-lts-utopic
 ```
 
 - Desktop-Full Install: (Recommended) : ROS, [rqt](http://wiki.ros.org/rqt), [rviz](http://wiki.ros.org/rviz), robot-generic libraries, 2D/3D simulators and 2D/3D perception.
-```
+```shell-script
 sudo apt-get install ros-indigo-desktop-full
 ```
 - or just the basic desktop install which comes with standard ROS, rqt, rviz, and robot-generic libraries.
-```
+```shell-script
 sudo apt-get install ros-indigo-desktop
 ```
 
 - For installing an individual Package, (specific ROS package) replace underscores with dashes of the package name:
-```
+```shell-script
 sudo apt-get install ros-indigo-PACKAGE
 ```
 example: ``sudo apt-get install ros-indigo-slam-gmapping``
@@ -376,20 +379,21 @@ example: ``sudo apt-get install ros-indigo-slam-gmapping``
 
 
 5. Initialize rosdep:
-```
+```shell-script
 sudo rosdep init
 rosdep update
 ```
 6. Environment setup
 - Adding ROS environment variables to your bash session:
 ``echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc`` or for kinetic: ``echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc``
-``
+```shell-script
 source ~/.bashrc
-``
+```
 
 7. Getting rosinstall:
 - It enables you to easily download many source trees for ROS packages with one command:
-``sudo apt-get install python-rosinstall``
+```shell-script
+sudo apt-get install python-rosinstall```
 
 8. See the next section for ROS turorials. Enjoy!
 
@@ -400,22 +404,22 @@ source ~/.bashrc
 *Important*: I highly recommend installing [Catkin Tools](https://catkin-tools.readthedocs.io/en/latest/installing.html) before moving forward!
 
 - Turtle bot Installation (for simulation only), do:
-```
+```shell-script
 sudo apt-get install ros-indigo-turtlebot ros-indigo-turtlebot-apps ros-indigo-turtlebot-interactions ros-indigo-turtlebot-simulator ros-indigo-kobuki-ftdi ros-indigo-rocon-remocon ros-indigo-rocon-qt-library ros-indigo-ar-track-alvar-msgs
 ```
 For kinetic:
-```
+```shell-script
 sudo apt-get install ros-kinetic-turtlebot ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-interactions ros-kinetic-turtlebot-simulator ros-kinetic-kobuki-ftdi ros-kinetic-rocon-launch ros-kinetic-rocon-apps ros-kinetic-ar-track-alvar-msgs
 ```
 or simply follow the [reference](http://wiki.ros.org/turtlebot/Tutorials/indigo/Turtlebot%20Installation).
 
 1. Configuring ROS Environment: (Make sure you did Point 6 of last section)
 A good way to check is to ensure that environment variables like ``ROS_ROOT`` and ``ROS_PACKAGE_PATH`` are set:
-```
+```shell-script
 printenv | grep ROS
 ```
 You should get something like this:
-```
+```shell-script
 ROS_ROOT=/opt/ros/kinetic/share/ros
 ROS_PACKAGE_PATH=/opt/ros/kinetic/share
 ROS_MASTER_URI=http://192.168.1.1:11311
@@ -426,13 +430,13 @@ ROS_IP=
 ROS_ETC_DIR=/opt/ros/kinetic/etc/ros
 ```
 If you don't, restart the ``terminal`` or open a new ``terminal`` window. If it still doesn't work, do:
-```
+```shell-script
 echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
 ```
 
 2. Creating ROS Workspace:
 Creating a ``ROS`` Workspace is simple.
-```
+```shell-script
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 ```
@@ -449,7 +453,7 @@ cd ~/catkin_ws/src
     1. [Install ROS](http://wiki.ros.org/kinetic/Installation/Ubuntu)
     2. Add the following lines to your `~/.bashrc`:
 
-        ```
+        ```shell-script
         export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
         #export ROS_IP=192.168.1.96
         export ROS_IP=$(ifconfig | grep -Po '(?<=inet addr:)192.168.1[.0-9]+' )
@@ -460,12 +464,12 @@ cd ~/catkin_ws/src
         **Note**: for the ROS_IP variable you can hardcode the ip address, but it can change, that is why the regexp is used.
 
     3. Install [ADB](https://developer.android.com/studio/command-line/adb.html)
-        ```
+        ```shell-script
         sudo apt-get install android-tools-adb android-tools-fastboot
         ```
 2. **Configure the drone:**
     1. **Make sure ADB works: connect your platform with a micro usb cable and type in console**:
-        ```
+        ```shell-script
         adb devices
         ```
 
@@ -503,7 +507,7 @@ cd ~/catkin_ws/src
             The password is '**linaro**'
 
         - Set root password:
-            ```
+            ```shell-script
             passwd root
             <enter new UNIX password>
             ```
@@ -511,11 +515,11 @@ cd ~/catkin_ws/src
             Set it to '**mathematical**'
 
         - Login as root:
-            ```
+            ```shell-script
             su
             ```
     3. **Add the following lines to your ``/root/.bashrc``**:
-        ```
+        ```shell-script
         export HOME=/root
         cd $HOME
 
@@ -527,8 +531,9 @@ cd ~/catkin_ws/src
         ```
     4. **Configure the Wi-Fi**:
         - Configure the station mode by editing the ``/etc/wpa_supplicant/wpa_supplicant.conf ``:
-          Configure one of the ``network`` sections (make sure only one ``network`` section is uncommented):`
-            ```
+          Configure one of the ``network`` sections (make sure only one ``network`` section is uncommented):
+            
+            ```shell-script
             network={
                      ssid="Land of Ooo"
                      proto=RSN
@@ -540,39 +545,39 @@ cd ~/catkin_ws/src
 
     5. **Learn how to switch between Wi-Fi modes**:
         - Access point (by default; Used for connecting directly to Ground Station Server; **No internet Connection**):
-        ```
+        ```shell-script
         /usr/local/qr-linux/wificonfig.sh -s softap
         ```
 
         - Station mode (connect to router):
-        ```
+        ```shell-script
         /usr/local/qr-linux/wificonfig.sh -s station
         ```
         After this you will need to reboot:
-        ```
+        ```shell-script
         reboot
         ```
         **IMPORTANT**: After you are connected to the internet, ``ping 8.8.8.8``. If for some reason, you are unable to reach the www server, try the following:
         - Check if your ``wlan0`` is on/off. Do:
-        ```
+        ```shell-script
         ip link show wlan0
         wlan0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN mode DEFAULT group default qlen 1000 link/ether 00:03:7f:17:93:43 brd ff:ff:ff:ff:ff:ff
         ```
         If you get ``DOWN`` in ``wlan0: <NO_CARRIER,BROADCAST,MULTICAST,DOWN>`` then you need to turn on your wireless network. Don't worry, the ``DOWN`` in ``pfifo_fast state DOWN`` doesn't matter. To turn on the wireless device, do:
         
-        ```
+        ```shell-script
         sudo ip link set wlan0 up
         ```
         and check ``ip link show wlan0`` again.
         *Note: The name of your wireless device is generally ``wlan0``. It can be anything else like: ``wlp0s3``. Check ``iwconfig`` for the network name.*
         
         - Try connecting to a *no-key* wifi server. Create a hotspot from you Mobile device, say: ``BlackTrojan`` ($SSID). Now,
-        ```
+        ```shell-script
         sudo iwconfig wlan0 essid $SSID # it sets the essid properly now
         sudo dhclient -v wlan0
         ```
         Now, You should be connected to the internet. Try ``ping 8.8.8.8``. Voila! It worked. *Note: Make sure that you have given access to iwconfig for the network connections. Inbuilt CLI applications/ services like ``network-manager`` may interfere with your network environment. To stop that particular service, do:*
-        ```
+        ```shell-script
         sudo service <service_name> stop
         ```
         e.g. ``sudo service network-manager stop``
@@ -591,7 +596,7 @@ cd ~/catkin_ws/src
         **NOTE!** For some reason ROS refuses to properly communicate with host through the station mode, use AP instead! Station mode is useful if you need Internet access on the platform.
 
 3. **Move some files to the platform. Go to the 'snapdragon_setup' folder, then execute (with platform connected via usb):**
-    ```
+    ```shell-script
     adb push ./PX4/px4.config /usr/share/data/adsp/px4.config
     adb push ./PX4/mainapp.config /root/mainapp.config
     adb push ./PX4/px4 /root
@@ -614,7 +619,7 @@ cd ~/catkin_ws/src
         - Also, install additional packages: `sudo apt-get install libeigen3-dev sip-dev libyaml-cpp-dev libboost-dev cmake ros-indigo-mavlink ros-indigo-tf ros-indigo-orocos-toolchain ros-indigo-angles ros-indigo-tf2 ros-indigo-tf2-ros`
 
     2. Download our catkin workspace:
-        ```
+        ```shell-script
         cd
         git clone https://github.com/cognifli/cognifli
         cp ~/cognifli/contrib/environment/.vimrc ~/
@@ -626,7 +631,7 @@ cd ~/catkin_ws/src
         ```
  
     3. Build everything:
-        ```
+        ```shell-script
         cd ~/cognifli
         catkin_make
         ```
@@ -635,7 +640,7 @@ cd ~/catkin_ws/src
     - Motor control
         - Make sure px4 is running (`./px4 mainapp.config` or through autorun)
         - In a separate window:
-            ```
+            ```shell-script
             roslaunch mavros px4.launch fcu_url:="udp://:14550@192.168.1.1:14556"
             ```
             You should see something like this in the end of the output. If you don't, something is wrong with your ip or port:
@@ -665,17 +670,17 @@ cd ~/catkin_ws/src
         - On a configured host, run `rostopic list`. You will see a lot of `/mavros/...` topics. For more information on Mavros, see [this](http://wiki.ros.org/mavros).
 
         - Now run the demo code. (You need to have cognifli repo set up on host):
-            ```
+            ```shell-script
             rosrun snapflight snapflight
             ```
 
     - Localization:
         In a separate windows (if you did not put it on autorun):
-        ```
+        ```shell-script
         imu_app -s 2
         ```
         And
-        ```
+        ```shell-script
         rosrun snap_ros_examples snap_vislam_node
         ```
         Then on a host run rviz and visualize tf!
@@ -683,7 +688,7 @@ cd ~/catkin_ws/src
 
 6. **Tips and tricks!**
     - Make things like ./px4 or IMU driver to run on system startup:
-        ```
+        ```shell-script
         cd ~/cognifli/contrib
         ./INSTALL.py --startup
 
@@ -696,7 +701,7 @@ cd ~/catkin_ws/src
 
     - Wipe the platform:
         Connect the drone via usb cable, execute on the host:
-        ```
+        ```shell-script
         cd firmware # This folder is in the 'snapdragon_setup'
         chmod +x jflash.sh
         sudo ./jflash.sh
