@@ -19,10 +19,16 @@
 - [Snapdragon Flight](#snapdragon-flight)
 - [To Do](#to-do)
 - [Wifi-Driver for TP-Link](http://kleinfelter.com/tp-link-ac1200-archer-t4u-usb-3-0-wifi-dongle-installation-for-ubuntu-16-04-yakkety-yak-debian-based-linux)
+- [Install mps-youtube](#mps-youtube)
+***
 
 ### MAY CONTAIN BIOHAZARDS, VIRUSES, BUGS AND BLACK HOLES!
 
 #### [Linux Cookbook and best practises](http://upstart.ubuntu.com/cookbook/#disabling-a-job-from-automatically-starting):
+
+### mps-youtube
+``sudo pip3 install -U git+https://github.com/mps-youtube/mps-youtube.git``
+
 
 ### Troubleshooting:
 - [Installing nVidia 381 on ASUS ROG GL502V driver](https://github.com/chahatdeep/dotfiles/issues/1)
