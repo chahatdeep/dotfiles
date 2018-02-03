@@ -27,8 +27,10 @@
 #### [Linux Cookbook and best practises](http://upstart.ubuntu.com/cookbook/#disabling-a-job-from-automatically-starting):
 
 ### mps-youtube
-``sudo pip3 install -U git+https://github.com/mps-youtube/mps-youtube.git
-sudo pip3 install youtube-dl``
+```
+sudo pip3 install -U git+https://github.com/mps-youtube/mps-youtube.git
+sudo pip3 install youtube-dl
+```
 
 
 ### Troubleshooting:
