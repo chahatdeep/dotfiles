@@ -1,0 +1,221 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  animation: bg 0.5s 1s forwards;
+  font-size: 16px;
+  user-select: none;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.wrap {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  width: 375px;
+  height: 100px;
+}
+
+hr {
+  height: 2px;
+  color: black;
+  background: #000;
+  border: none;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  animation: line .5s 1s forwards;
+  width: 100px;
+  overflow: visible;
+}
+
+@keyframes line {
+  0% {
+    top: 80px;
+    background: #000;
+    color: #000;
+    display: block;
+  }
+  50% {
+    top: -200px;
+    background: #fff;
+    color: #fff;
+    width: 300px;
+  }
+
+  100% {
+    top: 300px;
+    background: #fff;
+    color: #fff;
+    background: #fff;
+    width: 300px;
+  }
+}
+
+hr:after {
+  content: "";
+  background: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2px;
+  bottom: 0;
+  height: 150px;
+  width: 300px;
+  animation: eff 0.5s 1s forwards, opc 0.1s 1s forwards, pg 0.5s 1s forwards;
+  opacity: 0;
+  left: calc(50% - 150px);
+  right: calc(50% - 150px);
+}
+
+@keyframes eff {
+  0% {
+  }
+  100% {
+    background: #111;
+  }
+}
+
+@keyframes opc {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pg {
+  from {
+  }
+  to {
+    height: 0;
+  }
+}
+
+.w8,
+.error {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  width: 375px;
+  height: 170px;
+}
+
+.w8 {
+  height: 100px;
+}
+
+.error {
+  display: none;
+}
+
+.first {
+  font: 3.6em "Crimson Text", serif;
+  color: #111;
+  /* border-top: 2px solid #111;*/
+}
+
+.second {
+  font-size: 3.6em;
+  font-weight: 600;
+}
+
+.second,
+.third,
+.foth {
+  font-family: "Crimson Text", serif;
+  color: white;
+}
+
+.foth,
+.third {
+  font-size: 2em;
+  font-weight: 200;
+  /* border-bottom: 2px solid white */
+}
+
+.foth {
+  transition: 0.3s;
+  color: transparent;
+  display: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: transparent;
+  animation: magic .3s .1s forwards;
+  cursor: pointer;
+  color: #f7ca18;
+}
+
+@keyframes bg {
+  0% {
+    background: white;
+  }
+  100% {
+    background: #111;
+  }
+}
+
+@keyframes magic {
+  0% {
+    color: transparent;
+  }
+  80% {
+    color: white;
+  }
+  100% {
+    color: #f7ca18; /* or f04f54 - red*/
+  }
+}
+/*Weak optimization*/
+@media all and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+  @keyframes line {
+    0% {
+      top: 80px;
+      background: #000;
+      color: #000;
+    }
+    50% {
+      top: -200px;
+      background: #fff;
+      color: #fff;
+      width: 250px;
+    }
+
+    100% {
+      top: 20px;
+      background: #fff;
+      color: #fff;
+      background: #fff;
+      width: 250px;
+    }
+  }
+}
