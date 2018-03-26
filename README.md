@@ -20,6 +20,7 @@
 - [To Do](#to-do)
 - [Wifi-Driver for TP-Link](http://kleinfelter.com/tp-link-ac1200-archer-t4u-usb-3-0-wifi-dongle-installation-for-ubuntu-16-04-yakkety-yak-debian-based-linux)
 - [Install mps-youtube](#mps-youtube)
+- [SSH to $USERNAME for UMIACS Website: ssh $USERNAME@openlab.umiacs.umd.edu; then cd /fs/www-users/$USERNAME]
 ***
 
 ### MAY CONTAIN BIOHAZARDS, VIRUSES, BUGS AND BLACK HOLES!
