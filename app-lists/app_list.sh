@@ -93,3 +93,14 @@ acpid
 
 #Backlight Tool
 #vbetool #Use vbetool dpms off/on to switch backlight
+
+
+# For weather reports in i3:
+python-requests
+python-beautifulsoup4
+
+#Power Management
+mate-power-manager	
+
+# TEX LIVE!
+texlive-most
