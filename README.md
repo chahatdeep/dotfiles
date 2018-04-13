@@ -70,7 +70,7 @@ git config --global core.editor emacs
 
 5. cd <repo_name>
 
-6. `` shell-script
+6. `` shell-script &&
 git init ``
 
 7. Copy all the files you want to move to the repo.
