@@ -70,7 +70,8 @@ git config --global core.editor emacs
 
 5. cd <repo_name>
 
-6. ```
+6. 
+```
 shell-script
 git init 
 ```
