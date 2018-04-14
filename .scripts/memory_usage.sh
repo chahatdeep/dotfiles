@@ -1,10 +1,10 @@
 #!/bin/bash
 # To run script infinite times, do:
+# watch -n0 bash memory_usage.sh
+
 # Dependencies:
 # 1. nvidia-smi
 # 2. notify-sendd
-
-# watch -n0 bash memory_usage.sh
 
 
 # Log saved to filename:
