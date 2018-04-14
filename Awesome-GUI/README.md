@@ -1,0 +1,5 @@
+## 
+
+```
+sudo apt install sddm
+```
