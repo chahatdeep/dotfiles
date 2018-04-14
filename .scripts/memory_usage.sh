@@ -14,7 +14,7 @@ filename=../syslog.txt # Don't push the log file to git as the size can be huge.
 sleeptime=1
 
 # Notify memory usage start:
-notify-send "Starting memory log" -i face-smile "Check '$filename' for results"
+# notify-send "Starting memory log" -i face-smile "Check '$filename' for results"
 
 # Store Date:
 date &>> $filename
