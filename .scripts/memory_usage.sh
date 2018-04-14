@@ -1,6 +1,11 @@
 #!/bin/bash
 # To run script infinite times, do:
+# Dependencies:
+# 1. nvidia-smi
+# 2. notify-sendd
+
 # watch -n0 bash memory_usage.sh
+
 
 # Log saved to filename:
 filename=../syslog.txt # Don't push the log file to git as the size can be huge.
