@@ -1,0 +1,393 @@
+# Should you change your keyboard layout some time, delete
+# this file and re-run i3-config-wizard(1).
+#
+# i3 config file (v4)
+#------------------------------------------------------------------------
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#========================================================================
+#### >> Chahat Deep Singh i3 Config {chahatdeepsingh@gmail.com} << #####
+#========================================================================
+
+#Assign Alt
+set $mod Mod1 
+
+#Assign Win key
+set $mod2 Mod4 
+
+#Assign Ctrl to modC
+set $modC Ctrl 
+
+# External Monitor:
+
+exec xrandr --output DP-0 --auto --output HDMI-0 --auto --left-of DP-0
+exec xrandr --dpi 100
+
+# Keyboard Backlit:
+
+bindsym Shift+F4 exec ~/.scripts/./backlit_high
+bindsym Shift+F3 exec ~/.scripts/./backlit_low
+
+#System:
+#exec terminator -x ~/.mountall.sh & exit #Mount All drives on startup
+#exec udiskie #Automounting in /run/media
+exec xfce4-power-manager #Power Manager: Sleep/Lid Close Tool
+exec xset dpms 480 #Auto Screen Turn Off After 8 mins
+#exec terminator -x sudo iw wlp3s0 set power_save on #Auto Start Power saving on wifi
+
+exec alias untarbz2='tar xvfj'
+exec alias untargz='tar xvfz'
+
+#exec terminator -x sleep 5 && zathura ~/Gilbert\ Strang/Introduction\ to\ Linear\ Algebra\,\ 4th\ Edition\ \(6\)/Introduction\ to\ Linear\ Algebra\,\ 4th\ Editio\ -\ Gilbert\ Strang.pdf  
+#exec terminator -x sleep 5 && zathura ~/Davis\,\ Stephen\ R_/C__\ for\ Dummies\ \(9\)/C__\ for\ Dummies\ -\ Davis\,\ Stephen\ R_.pdf
+#exec terminator -x sleep 5 && ranger /media/Work/Lectures/English/
+
+#Conky:
+exec conky & exit
+exec conky -c ~/.conkyrc3 & exit
+#exec conky -c ~/.conky_quote & exit
+#exec conky -c ~/.conky_to_do2 & exit
+
+#Other Apps:
+#exec launchy  #--Alt+Space for fg
+#exec dropbox
+#exec skype
+for_window [instance="gsimplecal"] move absolute position 1662 px 20 px
+#exec redshift & exit
+#exec insync start
+#exec docky & exit
+#exec mate-power-manager
+
+#############################################################################
+
+######## >>--FONTS--<< ###################
+#font pango:DejaVu Sans Mono Bold 8	##
+#font pango:FontAwesome Bold 9		##
+font pango:Inconsolata Bold 10		
+#font pango:Monospace Bold 8		##
+#font pango:FontAwesome 8		##
+##########################################
+	
+####################################
+### MODE LAUNCHING FOR APPS 	####
+#mode "App launch" {		####
+#bindsym f exec firefox		####
+#bindsym Return mode "default"  ####
+#bindsym Escape mode "default"	####
+#}				####
+#bindsym $mod2+9 mode "App launch"##
+####################################
+
+
+# SYNCLIENT MOUSE SETTINGS:
+#Setting Mouse Touchpads
+exec synclient HorizTwoFingerScroll=0
+exec synclient TapButton1=1
+exec synclient TapButton2=3
+exec synclient TapButton3=2
+exec synclient CircularScrolling=1
+exec synclient PalmDetect=0
+exec synclient PalmMinZ=100
+exec synclient PalmMinWidth=2.5
+#syndaemon -i 2 -t -k
+
+#Switching Caps with Escape Key
+exec setxkbmap -option caps:escape
+
+#Switching Win/Super_L key with Ctrl
+#exec xmodmap -e "remove mod4 = Super_L"
+#exec xmodmap -e "add control = Super_L"
+
+#Turn on Redshift on startup:
+#exec redshift &
+#bg
+#clear
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec gnome-terminal
+
+# kill focused window
+#bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod2+x exec i3-dmenu-desktop
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+#Mouse Pad Toggle
+#bindsym XF86TouchpadToggle exec synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')
+bindsym Shift+F9 exec synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')
+
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# change focus in Microsoft Win style:
+bindsym $mod+Shift+Tab focus left
+bindsym $mod+Escape focus down
+bindsym $mod+Shift+Escape focus up
+bindsym $mod+Tab focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod2+Left focus left
+bindsym $mod2+Down focus down
+bindsym $mod2+Up focus up
+bindsym $mod2+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+#bindsym $mod+Tab focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+#Name the workspaces
+set $tag1 1
+set $tag2 2
+set $tag3 3
+set $tag4 4
+set $tag5 5
+set $tag6 6
+set $tag7 7
+set $tag8 8
+set $tag9 9
+set $tag0 ROS
+
+#switch to workspace
+bindsym $mod+1 workspace  $tag1
+bindsym $mod+2 workspace  $tag2
+bindsym $mod+3 workspace  $tag3
+bindsym $mod+4 workspace  $tag4
+bindsym $mod+5 workspace  $tag5
+bindsym $mod+6 workspace  $tag6
+bindsym $mod+7 workspace  $tag7
+bindsym $mod+8 workspace  $tag8
+bindsym $mod+9 workspace  $tag9
+bindsym $mod+0 workspace  $tag0
+
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $tag1
+bindsym $mod+Shift+2 move container to workspace $tag2
+bindsym $mod+Shift+3 move container to workspace $tag3
+bindsym $mod+Shift+4 move container to workspace $tag4
+bindsym $mod+Shift+5 move container to workspace $tag5
+bindsym $mod+Shift+6 move container to workspace $tag6
+bindsym $mod+Shift+7 move container to workspace $tag7
+bindsym $mod+Shift+8 move container to workspace $tag8
+bindsym $mod+Shift+9 move container to workspace $tag9
+bindsym $mod+Shift+0 move container to workspace $tag0
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+#restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+#exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+#mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+  
+        bindsym $Mod+Ctrl+h resize shrink width 10 px or 10 ppt
+        bindsym $Mod+Ctrl+j resize grow height 10 px or 10 ppt
+        bindsym $Mod+Ctrl+k resize shrink height 10 px or 10 ppt
+        bindsym $Mod+Ctrl+l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym $Mod+Ctrl+Left resize shrink width 8 px or 8 ppt
+        bindsym $Mod+Ctrl+Down resize grow height 8 px or 8 ppt
+        bindsym $Mod+Ctrl+Up resize shrink height 8 px or 8 ppt
+        bindsym $Mod+Ctrl+Right resize grow width 8 px or 8 ppt
+
+        # back to normal: Enter or Escape
+        # bindsym Return mode "default"
+        # bindsym Escape mode "default"
+#}
+
+#Binding volume keys:
+	bindsym Ctrl+F12 exec pactl -- set-sink-volume 0 +10%
+	bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+	bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+	bindsym Shift+F11 exec amixer set Master 5%-
+	bindsym Shift+F12 exec amixer set Master 5%+
+	bindsym XF86AudioMute exec amixer set Speaker 1+ toggle | amixer set Master 1+ toggle
+	bindsym Shift+F10 exec amixer set Speaker 1+ toggle | amixer set Master 1+ toggle
+	#bindsym XF86AudioMute exec amixer set Master 1+ toggle
+
+#XPS 15 Bindings:
+	#Binding player controls:
+	#	bindsym XF86AudioPlay exec playerctl play
+	#Binding Touch KEYS:
+		#bindsym $mod2+XF86MonBrightnessDown exec calibre
+	#	bindsym XF86AudioNext exec deadbeef
+	#	bindsym Shift+XF86AudioNext exec sudo killall deadbeef
+	#	bindsym Super_L exec calibre
+
+#My Useful Applications:
+	bindsym $mod2+1 exec firefox
+	bindsym $mod2+2 exec google-chrome-stable
+	bindsym $mod2+3 exec terminator -x ranger /media/
+	bindsym $mod2+Shift+3 exec terminator -x ranger ~/
+	bindsym $mod2+4 exec libreoffice
+	bindsym $mod2+5 exec calibre
+	bindsym $mod2+6 exec texmaker
+	bindsym $mod2+7 exec terminator -x cmus
+	bindsym $mod2+8 exec ~/.Franz/Franz
+	#bindsym $mod2+9 exec matlab -softwareopengl
+	bindsym $mod2+9 exec terminator -x matlab -nodesktop -nosplash
+	bindsym $mod2+Shift+9 terminator -x "matlab & sleep 5 && exit"
+	bindsym $mod2+0 exec terminator -x sh ~/.cmsc.sh 
+	bindsym $Mod+XF86MonBrightnessDown exec evince $modgre & terminator -x vim ~/GRE_PRINT.txt 
+	bindsym $mod2+n exec emacs ~/todo.org
+	bindsym $mod2+b exec terminator -x sudo vim ~/todo2.txt
+	bindsym $mod2+t exec terminator -x sudo vim ~/toefl.txt
+	bindsym $mod2+m exec terminator -x sudo vim ~/work/today
+	bindsym $mod2+s exec terminator -x sudo vim /media/research/Google\ Drive/Credentials_Passwords.txt
+	# bindsym $Mod+Super_L exec calibre
+	bindsym Ctrl+Escape exec bash ~/.scripts/suspend.sh
+	#bindsym Mod4+Escape exec bash ~/.scripts/suspend.sh
+	# bindsym $mod2+b exec terminator -x calc
+	bindsym $mod2+z exec mate-power-preferences
+#	bindsym Shift+F2 exec terminator -x sudo wifi-menu -o 
+	bindsym Shift+F2 exec terminator -x sudo service network-manager restart
+	bindsym Mod4+w kill 
+	# bindsym Ctrl+Q kill
+	# bindsym $mod2+x exec dmenu_run
+	bindsym Mod4+F1 exec gmail
+	bindsym $mod2+e exec nemo --no-desktop	
+	bindsym $mod2+Shift+e exec killall nemo
+	bindsym $mod+r mode "resize"
+	#bindsym Shift+F5 exec sudo tee /sys/class/backlight/acpi_video0/brightness <<< 10
+	#bindsym Shift+F6 exec sudo tee /sys/class/backlight/acpi_video0/brightness <<< 0 
+	bindsym Shift+F5 exec xbacklight -dec 10
+	bindsym Shift+F6 exec xbacklight -inc 10
+	bindsym Shift+F7 exec sleep 1 && exec xset dpms force standby
+	bindsym $mod2+c exec gsimplecal
+	bindsym $mod2+r exec emacs
+	#cmus Key binding
+ 	bindsym F10 exec cmus-remote -n #Next
+	#bindsym F8 exec cmus-remote -r  #Previous
+	bindsym F9 exec cmus-remote -u  #Toogle Pause
+	bindsym Ctrl+Alt+R exec recordmydesktop
+	# External Display:
+	#bindsym $mod2+Ctrl+F8 exec xrandr --output HDMI-0 --mode 1920x1080 # External Monitor on Full HD
+	bindsym $mod2+Ctrl+F8 exec xrandr --output HDMI-0 --mode 1680x1050 # External Monitor on: diff resolution
+	bindsym exec monitor_ext2_1680x1050 && sleep 3 && monitor_left
+	bindsym $mod2+H exec xrandr --output HDMI-0 --left-of DP-0 # Monitor on the left
+	bindsym $mod2+L exec xrandr --output HDMI-0  --right-of DP-0  # Monitor on the right
+	bindsym $mod2+Shift+F8 exec xrandr --output HDMI-0 --off # External Monitor on Full HD
+	
+#Border Color Scheme:
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #111111 #080808 #00d0ee #ffffff   #111111
+client.focused_inactive #111111 #111111 #aaaaaa #ffffff   #111111
+client.unfocused        #000000 #111111 #444444 #000000   #000000
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #000000
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+
+	status_command /home/usr/bin/i3bar #--Traditional i3 bar edited
+
+    workspace_buttons yes
+    separator_symbol " ! "
+    binding_mode_indicator no
+	colors{
+		#Whole color settings
+		background #0E0E0E
+		statusline #A0A0A0
+		separator  #202020
+
+        # Type             border  background font
+        focused_workspace  #AAAAAA #dddddd #111111
+	active_workspace   #333333 #0f676a #ffffff
+        inactive_workspace #111111 #111111 #aaaaaa
+        urgent_workspace   #aa0000 #090000 #ffffff
+    }
+    # i3bar position
+    position top
+   	
+	#Using custom i3status.conf
+	status_command i3status -c ~/.i3status.conf
+#	
+	#Using custom weather forecast
+	#status_command i3status | ~/.scripts/weather.py --wrap-i3-status 202396
+
+	#Using i3Blocks script
+	#status_command i3blocks
+#
+}
+
+#Lock using i3 lock
+#bindsym Mod4+Escape exec i3lock -n -i ~/Desktop/Linux-Wallpaper-30.png && exit #ONLY LOCK
+
+#bindsym Shift+F1 exec gksudo pm-suspend-hybrid
+bindsym Shift+F1 exec sudo pm-suspend-hybrid
+
+
+#Lock using i3 lock + Sleep
+bindsym Mod4+Escape exec bash ~/.scripts/suspend.sh
+bindsym Mod4+Shift+Escape exec systemctl suspend & bash ~/.scripts/suspend.sh
+#Startup Programs
+exec --no-startup-id nm-applet
+#exec feh --bg-fill ~/Pictures/arrow.jpg
+exec feh --bg-fill ~/Pictures/arch.png
+
+#Screenshot capture (Install scrot first)
+#bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'
+bindsym Print exec gnome-screenshot
+bindsym $mod2+Print exec gnome-screenshot -i
+bindsym Ctrl+Print exec gnome-screenshot -w
+bindsym Shift+Print exec gnome-screenshot -c

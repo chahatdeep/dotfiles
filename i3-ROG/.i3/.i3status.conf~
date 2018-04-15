@@ -1,0 +1,113 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+#color_good="#000000"
+general {
+        colors = true
+        interval =1
+}
+
+
+
+order += "cpu_usage"
+order += "cpu_temperature 0"
+#order += "ipv4"
+#order += "disk /"
+#order += "run_watch DHCP"
+#order += "run_watch VPN"
+order += "wireless wlp2s0"
+#order += "ethernet enp6s0"
+order += "battery 0"
+#order += "load"
+order += "volume master"
+order += "tztime IST"
+order += "tztime local"
+
+cpu_temperature 0 {
+	format = " %degrees°C"
+		#path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+		#path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+		#path = /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp0_input
+		#path = /sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input
+		#path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
+		#path = /sys/class/thermal/thermal_zone0/temp
+		path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
+}		#path = /sys/bus/acpi/devices/LNXTHERM\:00/thermal_zone/temp
+
+cpu_usage {
+	format = " %usage"
+}
+
+#ram_usage{
+#	path= awk '/MemFree/ {print $2}' /proc/meminfo
+#}
+
+wireless wlp2s0{
+	format_up = " %quality-%essid"
+        #format_up = "Wifi:%quality-%essid|%ip"
+        #format_down = "W: down"
+}
+
+ethernet enp3s0 {
+        # if you use %speed, i3status requires root privileges
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+battery 0 {
+	color_good="#00FF00"
+		format = " %status %percentage  %remaininghr %consumption"
+		low_threshold=30
+		threshold_type=percentage
+ 		status_bat  = ""
+ 		status_full = ""
+		status_chr  = ""
+		
+		hide_seconds = true
+		last_full_capacity = true
+		integer_battery_capacity = true
+#		color = '#FFFFFF'
+	
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPN {
+        pidfile = "/var/run/vpnc/pid"
+}
+
+tztime local {
+	#format = "<span foreground ='ffffff'>time:</span> %time" 
+	format = "  %a %m-%d  %l:%M %p EST"
+	#timezone ='USA'
+	#format = "%l:%M %p EST"
+
+}
+
+tztime IST {
+	timezone = 'Asia/Kolkata'
+	format = "%l:%M %p IST"
+}
+
+load {
+        format = "%1min"
+}
+
+disk "/" {
+        format = " LinuX:%avail"
+}
+
+volume master {
+	format=" %volume"
+	format_muted = " Mute"
+	device="default"
+	mixer ="Master"
+	mixer_idx=0
+}

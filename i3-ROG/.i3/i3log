@@ -1,0 +1,14 @@
+02/02/2018 08:21:05 PM - ERROR: Using Xinerama instead of RandR. This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this option as soon as you can.
+02/02/2018 08:21:05 PM - i3 4.11 (2015-09-30, branch "4.11") starting
+02/02/2018 08:21:05 PM - Parsing configfile /home/chahatdeep/.i3/config
+02/02/2018 08:21:05 PM - deciding for version 4 due to this line: # i3 config file (v4)
+02/02/2018 08:21:05 PM - [libi3] libi3/font.c Using Pango font Inconsolata, size 10
+02/02/2018 08:21:05 PM - [libi3] libi3/font.c X11 root window dictates 95.916084 DPI
+ERROR: Another window manager seems to be running (X error 10)
+02/02/2018 08:21:07 PM - ERROR: Using Xinerama instead of RandR. This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this option as soon as you can.
+02/02/2018 08:21:07 PM - i3 4.11 (2015-09-30, branch "4.11") starting
+02/02/2018 08:21:07 PM - Parsing configfile /home/chahatdeep/.i3/config
+02/02/2018 08:21:07 PM - deciding for version 4 due to this line: # i3 config file (v4)
+02/02/2018 08:21:07 PM - [libi3] libi3/font.c Using Pango font Inconsolata, size 10
+02/02/2018 08:21:07 PM - [libi3] libi3/font.c X11 root window dictates 95.916084 DPI
+ERROR: Another window manager seems to be running (X error 10)
