@@ -7,6 +7,7 @@
 tar xf Vimix.tar.xz
 ```
 - Now run the `Install` bash script: `sudo bash Install`
-- Edit any the config in `/boot/grub/grub.cfg` and `/boot/grub/themes/Vimix/theme.txt`
+- Edit the config files in `/boot/grub/grub.cfg` and `/boot/grub/themes/Vimix/theme.txt` (Optional)
+- Restart and enjoy the beauty!
 
 ***
