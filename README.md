@@ -85,6 +85,21 @@ git init ``
 
 ***
 
+### TP-LINK AC1200 Setup for Ubuntu 16.04
+```
+sudo apt-get purge rtl8812au-dkms
+```
+```
+sudo apt-get update
+sudo apt-get install git dkms
+git clone  https://github.com/ptpt52/rtl8812au.git
+cd rtl8812au
+sudo make -f Makefile.dkms install
+sudo modprobe rtl8812au
+```
+**Note:** Make sure the security boot is disabled. Disable Secure Boot (UEFI) in the BIOS!!
+***
+
 #### Appearance:
 ##### For Gnome-Terminal Solarized Color Schemes, follow [this](https://github.com/Anthony25/gnome-terminal-colors-solarizedv)
 - For Log-in HUD, do:
